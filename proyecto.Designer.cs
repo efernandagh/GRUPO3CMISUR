@@ -30,14 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(proyecto));
             groupBox1 = new GroupBox();
-            TextBox7 = new TextBox();
-            TextBox6 = new TextBox();
-            TextBox5 = new TextBox();
-            TextBox4 = new TextBox();
-            TextBox3 = new TextBox();
-            TextBox2 = new TextBox();
-            TextBox1 = new TextBox();
-            Button1 = new Button();
+            Txtdescripcion = new TextBox();
+            Txtusuario = new TextBox();
+            Txtestado = new TextBox();
+            Txtnombrepro = new TextBox();
+            Txtidproyecto = new TextBox();
+            Btnguardar = new Button();
             Label7 = new Label();
             Label6 = new Label();
             Label5 = new Label();
@@ -45,7 +43,7 @@
             Label3 = new Label();
             Label2 = new Label();
             Label1 = new Label();
-            DataGridView1 = new DataGridView();
+            dgvproyectos = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -54,8 +52,10 @@
             Column6 = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
+            dtpinnicio = new DateTimePicker();
+            dtpfin = new DateTimePicker();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvproyectos).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -63,14 +63,14 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.SteelBlue;
-            groupBox1.Controls.Add(TextBox7);
-            groupBox1.Controls.Add(TextBox6);
-            groupBox1.Controls.Add(TextBox5);
-            groupBox1.Controls.Add(TextBox4);
-            groupBox1.Controls.Add(TextBox3);
-            groupBox1.Controls.Add(TextBox2);
-            groupBox1.Controls.Add(TextBox1);
-            groupBox1.Controls.Add(Button1);
+            groupBox1.Controls.Add(dtpfin);
+            groupBox1.Controls.Add(dtpinnicio);
+            groupBox1.Controls.Add(Txtdescripcion);
+            groupBox1.Controls.Add(Txtusuario);
+            groupBox1.Controls.Add(Txtestado);
+            groupBox1.Controls.Add(Txtnombrepro);
+            groupBox1.Controls.Add(Txtidproyecto);
+            groupBox1.Controls.Add(Btnguardar);
             groupBox1.Controls.Add(Label7);
             groupBox1.Controls.Add(Label6);
             groupBox1.Controls.Add(Label5);
@@ -86,76 +86,60 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Proyecto";
             // 
-            // TextBox7
+            // Txtdescripcion
             // 
-            TextBox7.BackColor = SystemColors.ActiveBorder;
-            TextBox7.Location = new Point(267, 216);
-            TextBox7.Name = "TextBox7";
-            TextBox7.Size = new Size(100, 23);
-            TextBox7.TabIndex = 29;
+            Txtdescripcion.BackColor = SystemColors.ActiveBorder;
+            Txtdescripcion.Location = new Point(267, 140);
+            Txtdescripcion.Name = "Txtdescripcion";
+            Txtdescripcion.Size = new Size(100, 23);
+            Txtdescripcion.TabIndex = 27;
             // 
-            // TextBox6
+            // Txtusuario
             // 
-            TextBox6.BackColor = SystemColors.ActiveBorder;
-            TextBox6.Location = new Point(267, 176);
-            TextBox6.Name = "TextBox6";
-            TextBox6.Size = new Size(100, 23);
-            TextBox6.TabIndex = 28;
+            Txtusuario.BackColor = SystemColors.ActiveBorder;
+            Txtusuario.Location = new Point(267, 103);
+            Txtusuario.Name = "Txtusuario";
+            Txtusuario.Size = new Size(100, 23);
+            Txtusuario.TabIndex = 26;
             // 
-            // TextBox5
+            // Txtestado
             // 
-            TextBox5.BackColor = SystemColors.ActiveBorder;
-            TextBox5.Location = new Point(267, 140);
-            TextBox5.Name = "TextBox5";
-            TextBox5.Size = new Size(100, 23);
-            TextBox5.TabIndex = 27;
+            Txtestado.BackColor = SystemColors.ActiveBorder;
+            Txtestado.Location = new Point(267, 74);
+            Txtestado.Name = "Txtestado";
+            Txtestado.Size = new Size(100, 23);
+            Txtestado.TabIndex = 25;
             // 
-            // TextBox4
+            // Txtnombrepro
             // 
-            TextBox4.BackColor = SystemColors.ActiveBorder;
-            TextBox4.Location = new Point(267, 103);
-            TextBox4.Name = "TextBox4";
-            TextBox4.Size = new Size(100, 23);
-            TextBox4.TabIndex = 26;
+            Txtnombrepro.BackColor = SystemColors.ActiveBorder;
+            Txtnombrepro.Location = new Point(267, 39);
+            Txtnombrepro.Name = "Txtnombrepro";
+            Txtnombrepro.Size = new Size(100, 23);
+            Txtnombrepro.TabIndex = 24;
             // 
-            // TextBox3
+            // Txtidproyecto
             // 
-            TextBox3.BackColor = SystemColors.ActiveBorder;
-            TextBox3.Location = new Point(267, 74);
-            TextBox3.Name = "TextBox3";
-            TextBox3.Size = new Size(100, 23);
-            TextBox3.TabIndex = 25;
+            Txtidproyecto.BackColor = SystemColors.ActiveBorder;
+            Txtidproyecto.Location = new Point(267, 7);
+            Txtidproyecto.Name = "Txtidproyecto";
+            Txtidproyecto.Size = new Size(100, 23);
+            Txtidproyecto.TabIndex = 23;
             // 
-            // TextBox2
+            // Btnguardar
             // 
-            TextBox2.BackColor = SystemColors.ActiveBorder;
-            TextBox2.Location = new Point(267, 39);
-            TextBox2.Name = "TextBox2";
-            TextBox2.Size = new Size(100, 23);
-            TextBox2.TabIndex = 24;
-            // 
-            // TextBox1
-            // 
-            TextBox1.BackColor = SystemColors.ActiveBorder;
-            TextBox1.Location = new Point(267, 7);
-            TextBox1.Name = "TextBox1";
-            TextBox1.Size = new Size(100, 23);
-            TextBox1.TabIndex = 23;
-            // 
-            // Button1
-            // 
-            Button1.BackColor = Color.SteelBlue;
-            Button1.FlatAppearance.BorderSize = 0;
-            Button1.FlatAppearance.MouseOverBackColor = SystemColors.ActiveBorder;
-            Button1.FlatStyle = FlatStyle.Flat;
-            Button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Button1.ForeColor = Color.White;
-            Button1.Location = new Point(231, 279);
-            Button1.Name = "Button1";
-            Button1.Size = new Size(168, 23);
-            Button1.TabIndex = 22;
-            Button1.Text = "GUARDAR PROYECTO";
-            Button1.UseVisualStyleBackColor = false;
+            Btnguardar.BackColor = Color.SteelBlue;
+            Btnguardar.FlatAppearance.BorderSize = 0;
+            Btnguardar.FlatAppearance.MouseOverBackColor = SystemColors.ActiveBorder;
+            Btnguardar.FlatStyle = FlatStyle.Flat;
+            Btnguardar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Btnguardar.ForeColor = Color.White;
+            Btnguardar.Location = new Point(231, 279);
+            Btnguardar.Name = "Btnguardar";
+            Btnguardar.Size = new Size(168, 23);
+            Btnguardar.TabIndex = 22;
+            Btnguardar.Text = "GUARDAR PROYECTO";
+            Btnguardar.UseVisualStyleBackColor = false;
             // 
             // Label7
             // 
@@ -234,14 +218,14 @@
             Label1.TabIndex = 15;
             Label1.Text = "ID PROYECTO";
             // 
-            // DataGridView1
+            // dgvproyectos
             // 
-            DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
-            DataGridView1.Location = new Point(144, 373);
-            DataGridView1.Name = "DataGridView1";
-            DataGridView1.Size = new Size(620, 65);
-            DataGridView1.TabIndex = 2;
+            dgvproyectos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvproyectos.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
+            dgvproyectos.Location = new Point(144, 373);
+            dgvproyectos.Name = "dgvproyectos";
+            dgvproyectos.Size = new Size(620, 65);
+            dgvproyectos.TabIndex = 2;
             // 
             // Column1
             // 
@@ -292,6 +276,20 @@
             pictureBox2.TabIndex = 19;
             pictureBox2.TabStop = false;
             // 
+            // dtpinnicio
+            // 
+            dtpinnicio.Location = new Point(267, 178);
+            dtpinnicio.Name = "dtpinnicio";
+            dtpinnicio.Size = new Size(200, 23);
+            dtpinnicio.TabIndex = 30;
+            // 
+            // dtpfin
+            // 
+            dtpfin.Location = new Point(267, 218);
+            dtpfin.Name = "dtpfin";
+            dtpfin.Size = new Size(200, 23);
+            dtpfin.TabIndex = 31;
+            // 
             // proyecto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -299,14 +297,15 @@
             BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(889, 450);
             Controls.Add(panel1);
-            Controls.Add(DataGridView1);
+            Controls.Add(dgvproyectos);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "proyecto";
             Text = "proyecto";
+            Load += proyecto_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)DataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvproyectos).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
@@ -315,14 +314,14 @@
         #endregion
 
         private GroupBox groupBox1;
-        internal TextBox TextBox7;
-        internal TextBox TextBox6;
-        internal TextBox TextBox5;
-        internal TextBox TextBox4;
-        internal TextBox TextBox3;
-        internal TextBox TextBox2;
-        internal TextBox TextBox1;
-        internal Button Button1;
+        internal TextBox txtfechafin;
+        internal TextBox Txtfechainicio;
+        internal TextBox Txtdescripcion;
+        internal TextBox Txtusuario;
+        internal TextBox Txtestado;
+        internal TextBox Txtnombrepro;
+        internal TextBox Txtidproyecto;
+        internal Button Btnguardar;
         internal Label Label7;
         internal Label Label6;
         internal Label Label5;
@@ -330,7 +329,7 @@
         internal Label Label3;
         internal Label Label2;
         internal Label Label1;
-        internal DataGridView DataGridView1;
+        internal DataGridView dgvproyectos;
         internal DataGridViewTextBoxColumn Column1;
         internal DataGridViewTextBoxColumn Column2;
         internal DataGridViewTextBoxColumn Column3;
@@ -339,5 +338,7 @@
         internal DataGridViewTextBoxColumn Column6;
         private Panel panel1;
         private PictureBox pictureBox2;
+        private DateTimePicker dtpfin;
+        private DateTimePicker dtpinnicio;
     }
 }

@@ -16,5 +16,10 @@ namespace INICIO
         {
             InitializeComponent();
         }
+
+        private void proyecto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
