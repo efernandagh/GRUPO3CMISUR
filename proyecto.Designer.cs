@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(proyecto));
             groupBox1 = new GroupBox();
             TextBox7 = new TextBox();
             TextBox6 = new TextBox();
@@ -51,12 +52,17 @@
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
+            panel1 = new Panel();
+            pictureBox2 = new PictureBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DataGridView1).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.SteelBlue;
             groupBox1.Controls.Add(TextBox7);
             groupBox1.Controls.Add(TextBox6);
             groupBox1.Controls.Add(TextBox5);
@@ -72,7 +78,8 @@
             groupBox1.Controls.Add(Label3);
             groupBox1.Controls.Add(Label2);
             groupBox1.Controls.Add(Label1);
-            groupBox1.Location = new Point(212, 12);
+            groupBox1.ForeColor = Color.White;
+            groupBox1.Location = new Point(195, 47);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(511, 309);
             groupBox1.TabIndex = 0;
@@ -81,6 +88,7 @@
             // 
             // TextBox7
             // 
+            TextBox7.BackColor = SystemColors.ActiveBorder;
             TextBox7.Location = new Point(267, 216);
             TextBox7.Name = "TextBox7";
             TextBox7.Size = new Size(100, 23);
@@ -88,6 +96,7 @@
             // 
             // TextBox6
             // 
+            TextBox6.BackColor = SystemColors.ActiveBorder;
             TextBox6.Location = new Point(267, 176);
             TextBox6.Name = "TextBox6";
             TextBox6.Size = new Size(100, 23);
@@ -95,6 +104,7 @@
             // 
             // TextBox5
             // 
+            TextBox5.BackColor = SystemColors.ActiveBorder;
             TextBox5.Location = new Point(267, 140);
             TextBox5.Name = "TextBox5";
             TextBox5.Size = new Size(100, 23);
@@ -102,6 +112,7 @@
             // 
             // TextBox4
             // 
+            TextBox4.BackColor = SystemColors.ActiveBorder;
             TextBox4.Location = new Point(267, 103);
             TextBox4.Name = "TextBox4";
             TextBox4.Size = new Size(100, 23);
@@ -109,6 +120,7 @@
             // 
             // TextBox3
             // 
+            TextBox3.BackColor = SystemColors.ActiveBorder;
             TextBox3.Location = new Point(267, 74);
             TextBox3.Name = "TextBox3";
             TextBox3.Size = new Size(100, 23);
@@ -116,6 +128,7 @@
             // 
             // TextBox2
             // 
+            TextBox2.BackColor = SystemColors.ActiveBorder;
             TextBox2.Location = new Point(267, 39);
             TextBox2.Name = "TextBox2";
             TextBox2.Size = new Size(100, 23);
@@ -123,6 +136,7 @@
             // 
             // TextBox1
             // 
+            TextBox1.BackColor = SystemColors.ActiveBorder;
             TextBox1.Location = new Point(267, 7);
             TextBox1.Name = "TextBox1";
             TextBox1.Size = new Size(100, 23);
@@ -130,73 +144,93 @@
             // 
             // Button1
             // 
+            Button1.BackColor = Color.SteelBlue;
+            Button1.FlatAppearance.BorderSize = 0;
+            Button1.FlatAppearance.MouseOverBackColor = SystemColors.ActiveBorder;
+            Button1.FlatStyle = FlatStyle.Flat;
+            Button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Button1.ForeColor = Color.White;
             Button1.Location = new Point(231, 279);
             Button1.Name = "Button1";
             Button1.Size = new Size(168, 23);
             Button1.TabIndex = 22;
             Button1.Text = "GUARDAR PROYECTO";
-            Button1.UseVisualStyleBackColor = true;
+            Button1.UseVisualStyleBackColor = false;
             // 
             // Label7
             // 
             Label7.AutoSize = true;
+            Label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
+            Label7.ForeColor = Color.White;
             Label7.Location = new Point(119, 224);
             Label7.Name = "Label7";
-            Label7.Size = new Size(65, 15);
+            Label7.Size = new Size(68, 17);
             Label7.TabIndex = 21;
             Label7.Text = "FECHA FIN";
             // 
             // Label6
             // 
             Label6.AutoSize = true;
+            Label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
+            Label6.ForeColor = Color.White;
             Label6.Location = new Point(114, 184);
             Label6.Name = "Label6";
-            Label6.Size = new Size(85, 15);
+            Label6.Size = new Size(90, 17);
             Label6.TabIndex = 20;
             Label6.Text = "FECHA INICIO ";
             // 
             // Label5
             // 
             Label5.AutoSize = true;
+            Label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
+            Label5.ForeColor = Color.White;
             Label5.Location = new Point(115, 148);
             Label5.Name = "Label5";
-            Label5.Size = new Size(81, 15);
+            Label5.Size = new Size(86, 17);
             Label5.TabIndex = 19;
             Label5.Text = "DESCRIPCION";
             // 
             // Label4
             // 
             Label4.AutoSize = true;
+            Label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
+            Label4.ForeColor = Color.White;
             Label4.Location = new Point(114, 115);
             Label4.Name = "Label4";
-            Label4.Size = new Size(56, 15);
+            Label4.Size = new Size(61, 17);
             Label4.TabIndex = 18;
             Label4.Text = "USUARIO";
             // 
             // Label3
             // 
             Label3.AutoSize = true;
+            Label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
+            Label3.ForeColor = Color.White;
             Label3.Location = new Point(112, 82);
             Label3.Name = "Label3";
-            Label3.Size = new Size(49, 15);
+            Label3.Size = new Size(54, 17);
             Label3.TabIndex = 17;
             Label3.Text = "ESTADO";
             // 
             // Label2
             // 
             Label2.AutoSize = true;
+            Label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
+            Label2.ForeColor = Color.White;
             Label2.Location = new Point(112, 47);
             Label2.Name = "Label2";
-            Label2.Size = new Size(117, 15);
+            Label2.Size = new Size(127, 17);
             Label2.TabIndex = 16;
             Label2.Text = "NOMBRE PROYECTO";
             // 
             // Label1
             // 
             Label1.AutoSize = true;
+            Label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
+            Label1.ForeColor = Color.White;
             Label1.Location = new Point(111, 15);
             Label1.Name = "Label1";
-            Label1.Size = new Size(79, 15);
+            Label1.Size = new Size(87, 17);
             Label1.TabIndex = 15;
             Label1.Text = "ID PROYECTO";
             // 
@@ -204,9 +238,9 @@
             // 
             DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
-            DataGridView1.Location = new Point(133, 346);
+            DataGridView1.Location = new Point(144, 373);
             DataGridView1.Name = "DataGridView1";
-            DataGridView1.Size = new Size(641, 65);
+            DataGridView1.Size = new Size(620, 65);
             DataGridView1.TabIndex = 2;
             // 
             // Column1
@@ -239,18 +273,42 @@
             Column6.HeaderText = "FECHA FIN";
             Column6.Name = "Column6";
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.SteelBlue;
+            panel1.Controls.Add(pictureBox2);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(889, 41);
+            panel1.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(0, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(65, 46);
+            pictureBox2.TabIndex = 19;
+            pictureBox2.TabStop = false;
+            // 
             // proyecto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(889, 450);
+            Controls.Add(panel1);
             Controls.Add(DataGridView1);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "proyecto";
             Text = "proyecto";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -279,5 +337,7 @@
         internal DataGridViewTextBoxColumn Column4;
         internal DataGridViewTextBoxColumn Column5;
         internal DataGridViewTextBoxColumn Column6;
+        private Panel panel1;
+        private PictureBox pictureBox2;
     }
 }
