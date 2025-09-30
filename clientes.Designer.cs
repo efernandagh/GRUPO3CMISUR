@@ -45,6 +45,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.CornflowerBlue;
+            groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(dateTimePicker1);
             groupBox1.Controls.Add(textBox4);
             groupBox1.Controls.Add(textBox3);
@@ -55,9 +57,11 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label3);
+            groupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            groupBox1.ForeColor = Color.White;
             groupBox1.Location = new Point(234, 45);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(388, 250);
+            groupBox1.Size = new Size(388, 261);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "seccion de clientes";
@@ -66,35 +70,35 @@
             // 
             dateTimePicker1.Location = new Point(128, 186);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.Size = new Size(200, 25);
             dateTimePicker1.TabIndex = 10;
             // 
             // textBox4
             // 
             textBox4.Location = new Point(108, 147);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(127, 23);
+            textBox4.Size = new Size(127, 25);
             textBox4.TabIndex = 9;
             // 
             // textBox3
             // 
             textBox3.Location = new Point(108, 109);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(127, 23);
+            textBox3.Size = new Size(127, 25);
             textBox3.TabIndex = 8;
             // 
             // textBox2
             // 
             textBox2.Location = new Point(108, 67);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(127, 23);
+            textBox2.Size = new Size(127, 25);
             textBox2.TabIndex = 7;
             // 
             // textBox1
             // 
             textBox1.Location = new Point(108, 38);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(127, 23);
+            textBox1.Size = new Size(127, 25);
             textBox1.TabIndex = 6;
             // 
             // label6
@@ -102,7 +106,7 @@
             label6.AutoSize = true;
             label6.Location = new Point(25, 192);
             label6.Name = "label6";
-            label6.Size = new Size(97, 15);
+            label6.Size = new Size(103, 17);
             label6.TabIndex = 5;
             label6.Text = "Fecha de registro";
             // 
@@ -111,7 +115,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(25, 155);
             label5.Name = "label5";
-            label5.Size = new Size(57, 15);
+            label5.Size = new Size(60, 17);
             label5.TabIndex = 4;
             label5.Text = "Direccion";
             // 
@@ -120,7 +124,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(25, 117);
             label4.Name = "label4";
-            label4.Size = new Size(51, 15);
+            label4.Size = new Size(52, 17);
             label4.TabIndex = 3;
             label4.Text = "telefono";
             // 
@@ -129,7 +133,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(25, 80);
             label2.Name = "label2";
-            label2.Size = new Size(51, 15);
+            label2.Size = new Size(52, 17);
             label2.TabIndex = 1;
             label2.Text = "Apellido";
             // 
@@ -138,13 +142,16 @@
             label3.AutoSize = true;
             label3.Location = new Point(25, 41);
             label3.Name = "label3";
-            label3.Size = new Size(51, 15);
+            label3.Size = new Size(54, 17);
             label3.TabIndex = 0;
             label3.Text = "Nombre";
             // 
             // button1
             // 
-            button1.Location = new Point(362, 312);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseOverBackColor = SystemColors.ActiveBorder;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(146, 232);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 3;
@@ -155,8 +162,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
             Controls.Add(groupBox1);
             Name = "clientes";
             Text = "clientes";
