@@ -98,5 +98,10 @@ namespace INICIO
             LimpiarCampos();
             MessageBox.Show("Operación cancelada.");
         }
+
+        private void txtnombreusuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

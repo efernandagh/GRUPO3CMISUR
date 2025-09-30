@@ -118,7 +118,7 @@
             // txtidrol
             // 
             txtidrol.BackColor = SystemColors.ActiveBorder;
-            txtidrol.Location = new Point(127, 29);
+            txtidrol.Location = new Point(127, 32);
             txtidrol.Name = "txtidrol";
             txtidrol.Size = new Size(100, 25);
             txtidrol.TabIndex = 6;

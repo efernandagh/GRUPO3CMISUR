@@ -217,6 +217,7 @@
             txtnombreusuario.Name = "txtnombreusuario";
             txtnombreusuario.Size = new Size(125, 25);
             txtnombreusuario.TabIndex = 0;
+            txtnombreusuario.TextChanged += txtnombreusuario_TextChanged;
             // 
             // txtapellidousuarios
             // 
