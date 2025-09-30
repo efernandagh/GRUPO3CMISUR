@@ -16,5 +16,10 @@ namespace INICIO
         {
             InitializeComponent();
         }
+
+        private void inventario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

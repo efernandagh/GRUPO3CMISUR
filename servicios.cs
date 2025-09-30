@@ -21,5 +21,40 @@ namespace INICIO
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            txtdesc.Text = "";
+            txtnombreser.Text = "";
+            txtprec.Text = "";
+            {
+
+            }
+        }
+
+        private void txtnombredelservicio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void txtdesc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

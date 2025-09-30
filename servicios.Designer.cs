@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            txtnombreser = new ComboBox();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            numericUpDown1 = new NumericUpDown();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtprec = new NumericUpDown();
+            txtdesc = new TextBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtprec).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(txtnombreser);
             groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(button2);
             groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(numericUpDown1);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(txtprec);
+            groupBox1.Controls.Add(txtdesc);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(154, 48);
+            groupBox1.Location = new Point(144, 49);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
@@ -61,6 +61,17 @@
             groupBox1.TabIndex = 23;
             groupBox1.TabStop = false;
             groupBox1.Text = "Seccion de servicios";
+            groupBox1.Enter += groupBox1_Enter;
+            // 
+            // txtnombreser
+            // 
+            txtnombreser.FormattingEnabled = true;
+            txtnombreser.Items.AddRange(new object[] { "Mantenimiento Industrial ", "Diseño de soluciones mecánicas personalizadas", "Reparación de maquinaria agrícola ", "Servicios técnicos especializados" });
+            txtnombreser.Location = new Point(214, 125);
+            txtnombreser.Name = "txtnombreser";
+            txtnombreser.Size = new Size(341, 28);
+            txtnombreser.TabIndex = 33;
+            txtnombreser.SelectedIndexChanged += txtnombredelservicio_SelectedIndexChanged;
             // 
             // button3
             // 
@@ -81,6 +92,7 @@
             button2.TabIndex = 31;
             button2.Text = "Eliminar";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -92,29 +104,23 @@
             button1.Text = "Guardar";
             button1.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // txtprec
             // 
-            numericUpDown1.Location = new Point(186, 273);
-            numericUpDown1.Margin = new Padding(3, 4, 3, 4);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(137, 27);
-            numericUpDown1.TabIndex = 29;
+            txtprec.Location = new Point(186, 273);
+            txtprec.Margin = new Padding(3, 4, 3, 4);
+            txtprec.Name = "txtprec";
+            txtprec.Size = new Size(102, 27);
+            txtprec.TabIndex = 29;
+            txtprec.ValueChanged += numericUpDown1_ValueChanged;
             // 
-            // textBox2
+            // txtdesc
             // 
-            textBox2.Location = new Point(189, 196);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(134, 27);
-            textBox2.TabIndex = 28;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(202, 118);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(134, 27);
-            textBox1.TabIndex = 27;
+            txtdesc.Location = new Point(189, 196);
+            txtdesc.Margin = new Padding(3, 4, 3, 4);
+            txtdesc.Name = "txtdesc";
+            txtdesc.Size = new Size(193, 27);
+            txtdesc.TabIndex = 28;
+            txtdesc.TextChanged += txtdesc_TextChanged;
             // 
             // label4
             // 
@@ -155,7 +161,7 @@
             Load += servicios_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtprec).EndInit();
             ResumeLayout(false);
         }
 
@@ -165,11 +171,13 @@
         private Button button3;
         private Button button2;
         private Button button1;
-        private NumericUpDown numericUpDown1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private NumericUpDown txtprecio;
+        private TextBox txtdesc;
         private Label label4;
         private Label label3;
         private Label label2;
+        private ComboBox txtnombredelservicio;
+        private NumericUpDown txtprec;
+        private ComboBox txtnombreser;
     }
 }
