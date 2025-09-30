@@ -91,7 +91,7 @@
             btneliminar.FlatStyle = FlatStyle.Flat;
             btneliminar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btneliminar.ForeColor = Color.White;
-            btneliminar.Location = new Point(116, 223);
+            btneliminar.Location = new Point(127, 223);
             btneliminar.Name = "btneliminar";
             btneliminar.Size = new Size(71, 23);
             btneliminar.TabIndex = 9;
