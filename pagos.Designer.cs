@@ -44,6 +44,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.CornflowerBlue;
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnGuardar);
@@ -83,6 +84,7 @@
             // btnGuardar
             // 
             btnGuardar.BackColor = Color.FromArgb(128, 128, 255);
+            btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.Location = new Point(367, 231);
             btnGuardar.Margin = new Padding(3, 2, 3, 2);

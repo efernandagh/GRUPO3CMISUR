@@ -16,5 +16,15 @@ namespace INICIO
         {
             InitializeComponent();
         }
+
+        private void seguimiento_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

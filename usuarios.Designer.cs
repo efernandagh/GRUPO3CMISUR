@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btncancelar = new Button();
+            btneliminar = new Button();
             btnGuardar = new Button();
             txtUsuario = new Label();
             txtFecha = new Label();
@@ -37,17 +39,20 @@
             txtCorreo = new Label();
             txtApellido = new Label();
             txtNombre = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            textBox1 = new TextBox();
-            textBox4 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox5 = new TextBox();
+            dtpfecha = new DateTimePicker();
+            txtnombreusuario = new TextBox();
+            txtapellidousuarios = new TextBox();
+            txtrolusuario = new TextBox();
+            txtclaveusuario = new TextBox();
+            txtcorreousuario = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.BackColor = Color.CornflowerBlue;
+            panel1.Controls.Add(btncancelar);
+            panel1.Controls.Add(btneliminar);
             panel1.Controls.Add(btnGuardar);
             panel1.Controls.Add(txtUsuario);
             panel1.Controls.Add(txtFecha);
@@ -56,145 +61,207 @@
             panel1.Controls.Add(txtCorreo);
             panel1.Controls.Add(txtApellido);
             panel1.Controls.Add(txtNombre);
-            panel1.Controls.Add(dateTimePicker1);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(textBox5);
-            panel1.Location = new Point(185, 11);
+            panel1.Controls.Add(dtpfecha);
+            panel1.Controls.Add(txtnombreusuario);
+            panel1.Controls.Add(txtapellidousuarios);
+            panel1.Controls.Add(txtrolusuario);
+            panel1.Controls.Add(txtclaveusuario);
+            panel1.Controls.Add(txtcorreousuario);
+            panel1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            panel1.ForeColor = Color.White;
+            panel1.Location = new Point(230, 31);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(335, 336);
             panel1.TabIndex = 7;
             // 
+            // btncancelar
+            // 
+            btncancelar.BackColor = Color.CornflowerBlue;
+            btncancelar.FlatAppearance.BorderSize = 0;
+            btncancelar.FlatAppearance.MouseOverBackColor = SystemColors.ActiveBorder;
+            btncancelar.FlatStyle = FlatStyle.Flat;
+            btncancelar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btncancelar.ForeColor = Color.White;
+            btncancelar.Location = new Point(225, 290);
+            btncancelar.Margin = new Padding(3, 2, 3, 2);
+            btncancelar.Name = "btncancelar";
+            btncancelar.Size = new Size(82, 22);
+            btncancelar.TabIndex = 14;
+            btncancelar.Text = "Cancelar";
+            btncancelar.UseVisualStyleBackColor = false;
+            btncancelar.Click += btncancelar_Click;
+            // 
+            // btneliminar
+            // 
+            btneliminar.BackColor = Color.CornflowerBlue;
+            btneliminar.FlatAppearance.BorderSize = 0;
+            btneliminar.FlatAppearance.MouseOverBackColor = SystemColors.ActiveBorder;
+            btneliminar.FlatStyle = FlatStyle.Flat;
+            btneliminar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btneliminar.ForeColor = Color.White;
+            btneliminar.Location = new Point(120, 290);
+            btneliminar.Margin = new Padding(3, 2, 3, 2);
+            btneliminar.Name = "btneliminar";
+            btneliminar.Size = new Size(82, 22);
+            btneliminar.TabIndex = 13;
+            btneliminar.Text = "Eliminar";
+            btneliminar.UseVisualStyleBackColor = false;
+            btneliminar.Click += btneliminar_Click;
+            // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(129, 278);
+            btnGuardar.BackColor = Color.CornflowerBlue;
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatAppearance.MouseOverBackColor = SystemColors.ActiveBorder;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Location = new Point(13, 290);
             btnGuardar.Margin = new Padding(3, 2, 3, 2);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(82, 22);
             btnGuardar.TabIndex = 7;
             btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // txtUsuario
             // 
             txtUsuario.AutoSize = true;
             txtUsuario.Location = new Point(13, 0);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(47, 15);
+            txtUsuario.Size = new Size(55, 17);
             txtUsuario.TabIndex = 12;
             txtUsuario.Text = "Usuario";
             // 
             // txtFecha
             // 
             txtFecha.AutoSize = true;
+            txtFecha.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
+            txtFecha.ForeColor = Color.White;
             txtFecha.Location = new Point(41, 221);
             txtFecha.Name = "txtFecha";
-            txtFecha.Size = new Size(38, 15);
+            txtFecha.Size = new Size(40, 17);
             txtFecha.TabIndex = 11;
             txtFecha.Text = "Fecha";
             // 
             // txtRol
             // 
             txtRol.AutoSize = true;
+            txtRol.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
+            txtRol.ForeColor = Color.White;
             txtRol.Location = new Point(41, 178);
             txtRol.Name = "txtRol";
-            txtRol.Size = new Size(24, 15);
+            txtRol.Size = new Size(26, 17);
             txtRol.TabIndex = 10;
             txtRol.Text = "Rol";
             // 
             // txtClave
             // 
             txtClave.AutoSize = true;
+            txtClave.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
+            txtClave.ForeColor = Color.White;
             txtClave.Location = new Point(41, 141);
             txtClave.Name = "txtClave";
-            txtClave.Size = new Size(36, 15);
+            txtClave.Size = new Size(38, 17);
             txtClave.TabIndex = 9;
             txtClave.Text = "Clave";
             // 
             // txtCorreo
             // 
             txtCorreo.AutoSize = true;
+            txtCorreo.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
+            txtCorreo.ForeColor = Color.White;
             txtCorreo.Location = new Point(41, 103);
             txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(43, 15);
+            txtCorreo.Size = new Size(46, 17);
             txtCorreo.TabIndex = 8;
             txtCorreo.Text = "Correo";
             // 
             // txtApellido
             // 
             txtApellido.AutoSize = true;
+            txtApellido.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
+            txtApellido.ForeColor = Color.White;
             txtApellido.Location = new Point(41, 67);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(51, 15);
+            txtApellido.Size = new Size(52, 17);
             txtApellido.TabIndex = 7;
             txtApellido.Text = "Apellido";
             // 
             // txtNombre
             // 
             txtNombre.AutoSize = true;
+            txtNombre.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
+            txtNombre.ForeColor = Color.White;
             txtNombre.Location = new Point(41, 33);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(51, 15);
+            txtNombre.Size = new Size(54, 17);
             txtNombre.TabIndex = 6;
             txtNombre.Text = "Nombre";
             // 
-            // dateTimePicker1
+            // dtpfecha
             // 
-            dateTimePicker1.Location = new Point(88, 221);
-            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(233, 23);
-            dateTimePicker1.TabIndex = 5;
+            dtpfecha.Location = new Point(88, 221);
+            dtpfecha.Margin = new Padding(3, 2, 3, 2);
+            dtpfecha.Name = "dtpfecha";
+            dtpfecha.Size = new Size(233, 25);
+            dtpfecha.TabIndex = 5;
             // 
-            // textBox1
+            // txtnombreusuario
             // 
-            textBox1.Location = new Point(161, 33);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 23);
-            textBox1.TabIndex = 0;
+            txtnombreusuario.BackColor = SystemColors.ActiveBorder;
+            txtnombreusuario.Location = new Point(161, 33);
+            txtnombreusuario.Margin = new Padding(3, 2, 3, 2);
+            txtnombreusuario.Name = "txtnombreusuario";
+            txtnombreusuario.Size = new Size(125, 25);
+            txtnombreusuario.TabIndex = 0;
             // 
-            // textBox4
+            // txtapellidousuarios
             // 
-            textBox4.Location = new Point(161, 67);
-            textBox4.Margin = new Padding(3, 2, 3, 2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 23);
-            textBox4.TabIndex = 3;
+            txtapellidousuarios.BackColor = SystemColors.ActiveBorder;
+            txtapellidousuarios.Location = new Point(161, 67);
+            txtapellidousuarios.Margin = new Padding(3, 2, 3, 2);
+            txtapellidousuarios.Name = "txtapellidousuarios";
+            txtapellidousuarios.Size = new Size(125, 25);
+            txtapellidousuarios.TabIndex = 3;
             // 
-            // textBox2
+            // txtrolusuario
             // 
-            textBox2.Location = new Point(161, 178);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 23);
-            textBox2.TabIndex = 1;
+            txtrolusuario.BackColor = SystemColors.ActiveBorder;
+            txtrolusuario.Location = new Point(161, 178);
+            txtrolusuario.Margin = new Padding(3, 2, 3, 2);
+            txtrolusuario.Name = "txtrolusuario";
+            txtrolusuario.Size = new Size(125, 25);
+            txtrolusuario.TabIndex = 1;
             // 
-            // textBox3
+            // txtclaveusuario
             // 
-            textBox3.Location = new Point(161, 141);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 23);
-            textBox3.TabIndex = 2;
+            txtclaveusuario.BackColor = SystemColors.ActiveBorder;
+            txtclaveusuario.Location = new Point(161, 141);
+            txtclaveusuario.Margin = new Padding(3, 2, 3, 2);
+            txtclaveusuario.Name = "txtclaveusuario";
+            txtclaveusuario.Size = new Size(125, 25);
+            txtclaveusuario.TabIndex = 2;
             // 
-            // textBox5
+            // txtcorreousuario
             // 
-            textBox5.Location = new Point(161, 103);
-            textBox5.Margin = new Padding(3, 2, 3, 2);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 23);
-            textBox5.TabIndex = 4;
+            txtcorreousuario.BackColor = SystemColors.ActiveBorder;
+            txtcorreousuario.Location = new Point(161, 103);
+            txtcorreousuario.Margin = new Padding(3, 2, 3, 2);
+            txtcorreousuario.Name = "txtcorreousuario";
+            txtcorreousuario.Size = new Size(125, 25);
+            txtcorreousuario.TabIndex = 4;
             // 
             // usuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "usuarios";
             Text = "usuarios";
             panel1.ResumeLayout(false);
@@ -213,11 +280,13 @@
         private Label txtCorreo;
         private Label txtApellido;
         private Label txtNombre;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBox1;
-        private TextBox textBox4;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox5;
+        private DateTimePicker dtpfecha;
+        private TextBox txtnombreusuario;
+        private TextBox txtapellidousuarios;
+        private TextBox txtrolusuario;
+        private TextBox txtclaveusuario;
+        private TextBox txtcorreousuario;
+        private Button btncancelar;
+        private Button btneliminar;
     }
 }

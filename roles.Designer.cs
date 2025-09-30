@@ -31,9 +31,9 @@
             GroupBox1 = new GroupBox();
             btncancelar = new Button();
             btneliminar = new Button();
-            TextBox3 = new TextBox();
-            TextBox2 = new TextBox();
-            TextBox1 = new TextBox();
+            txtdescrip = new TextBox();
+            txtnombrerol = new TextBox();
+            txtidrol = new TextBox();
             btnguardar = new Button();
             Label3 = new Label();
             Label2 = new Label();
@@ -51,9 +51,9 @@
             GroupBox1.BackColor = Color.CornflowerBlue;
             GroupBox1.Controls.Add(btncancelar);
             GroupBox1.Controls.Add(btneliminar);
-            GroupBox1.Controls.Add(TextBox3);
-            GroupBox1.Controls.Add(TextBox2);
-            GroupBox1.Controls.Add(TextBox1);
+            GroupBox1.Controls.Add(txtdescrip);
+            GroupBox1.Controls.Add(txtnombrerol);
+            GroupBox1.Controls.Add(txtidrol);
             GroupBox1.Controls.Add(btnguardar);
             GroupBox1.Controls.Add(Label3);
             GroupBox1.Controls.Add(Label2);
@@ -81,6 +81,7 @@
             btncancelar.TabIndex = 10;
             btncancelar.Text = "Cancelar";
             btncancelar.UseVisualStyleBackColor = false;
+            btncancelar.Click += btncancelar_Click;
             // 
             // btneliminar
             // 
@@ -96,30 +97,31 @@
             btneliminar.TabIndex = 9;
             btneliminar.Text = "Eliminar";
             btneliminar.UseVisualStyleBackColor = false;
+            btneliminar.Click += btneliminar_Click;
             // 
-            // TextBox3
+            // txtdescrip
             // 
-            TextBox3.BackColor = SystemColors.ActiveBorder;
-            TextBox3.Location = new Point(127, 131);
-            TextBox3.Name = "TextBox3";
-            TextBox3.Size = new Size(100, 25);
-            TextBox3.TabIndex = 8;
+            txtdescrip.BackColor = SystemColors.ActiveBorder;
+            txtdescrip.Location = new Point(127, 131);
+            txtdescrip.Name = "txtdescrip";
+            txtdescrip.Size = new Size(100, 25);
+            txtdescrip.TabIndex = 8;
             // 
-            // TextBox2
+            // txtnombrerol
             // 
-            TextBox2.BackColor = SystemColors.ActiveBorder;
-            TextBox2.Location = new Point(127, 78);
-            TextBox2.Name = "TextBox2";
-            TextBox2.Size = new Size(100, 25);
-            TextBox2.TabIndex = 7;
+            txtnombrerol.BackColor = SystemColors.ActiveBorder;
+            txtnombrerol.Location = new Point(127, 78);
+            txtnombrerol.Name = "txtnombrerol";
+            txtnombrerol.Size = new Size(100, 25);
+            txtnombrerol.TabIndex = 7;
             // 
-            // TextBox1
+            // txtidrol
             // 
-            TextBox1.BackColor = SystemColors.ActiveBorder;
-            TextBox1.Location = new Point(127, 29);
-            TextBox1.Name = "TextBox1";
-            TextBox1.Size = new Size(100, 25);
-            TextBox1.TabIndex = 6;
+            txtidrol.BackColor = SystemColors.ActiveBorder;
+            txtidrol.Location = new Point(127, 29);
+            txtidrol.Name = "txtidrol";
+            txtidrol.Size = new Size(100, 25);
+            txtidrol.TabIndex = 6;
             // 
             // btnguardar
             // 
@@ -135,6 +137,7 @@
             btnguardar.TabIndex = 5;
             btnguardar.Text = "Guardar ";
             btnguardar.UseVisualStyleBackColor = false;
+            btnguardar.Click += btnguardar_Click;
             // 
             // Label3
             // 
@@ -205,6 +208,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "roles";
             Text = "roles";
+            Load += roles_Load;
             GroupBox1.ResumeLayout(false);
             GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DataGridView1).EndInit();
@@ -214,9 +218,9 @@
         #endregion
 
         internal GroupBox GroupBox1;
-        internal TextBox TextBox3;
-        internal TextBox TextBox2;
-        internal TextBox TextBox1;
+        internal TextBox txtdescrip;
+        internal TextBox txtnombrerol;
+        internal TextBox txtidrol;
         internal Button btnguardar;
         internal Label Label3;
         internal Label Label2;

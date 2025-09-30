@@ -143,6 +143,7 @@
             Controls.Add(groupBox1);
             Name = "servicios";
             Text = "servicios";
+            Load += servicios_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
