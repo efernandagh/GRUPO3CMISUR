@@ -18,7 +18,7 @@ namespace INICIO
         private void button1_Click(object sender, EventArgs e)
         {
             string nombre = txtnombre.Text;
-          
+
             string contra = txtcontra.Text;
 
 
@@ -34,7 +34,7 @@ namespace INICIO
         private void button1_Click_1(object sender, EventArgs e)
         {
             txtnombre.Clear();
-           
+
             txtcontra.Clear();
 
 
@@ -47,6 +47,11 @@ namespace INICIO
         }
 
         private void txtnombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtcontra_TextChanged(object sender, EventArgs e)
         {
 
         }

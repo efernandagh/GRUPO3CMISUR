@@ -176,6 +176,7 @@
             Controls.Add(groupBox1);
             Name = "procesos";
             Text = "procesos";
+            Load += procesos_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DataGridView1).EndInit();

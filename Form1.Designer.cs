@@ -106,6 +106,7 @@
             txtcontra.Name = "txtcontra";
             txtcontra.Size = new Size(134, 23);
             txtcontra.TabIndex = 9;
+            txtcontra.TextChanged += txtcontra_TextChanged;
             // 
             // button2
             // 

@@ -1,4 +1,5 @@
-﻿namespace INICIO
+﻿
+namespace INICIO
 {
     partial class proyecto
     {
@@ -30,6 +31,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(proyecto));
             groupBox1 = new GroupBox();
+            txtff = new TextBox();
+            txtfi = new TextBox();
             Txtdescripcion = new TextBox();
             Txtusuario = new TextBox();
             Txtestado = new TextBox();
@@ -52,8 +55,6 @@
             Column6 = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
-            dtpinnicio = new DateTimePicker();
-            dtpfin = new DateTimePicker();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvproyectos).BeginInit();
             panel1.SuspendLayout();
@@ -63,8 +64,8 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.SteelBlue;
-            groupBox1.Controls.Add(dtpfin);
-            groupBox1.Controls.Add(dtpinnicio);
+            groupBox1.Controls.Add(txtff);
+            groupBox1.Controls.Add(txtfi);
             groupBox1.Controls.Add(Txtdescripcion);
             groupBox1.Controls.Add(Txtusuario);
             groupBox1.Controls.Add(Txtestado);
@@ -85,6 +86,22 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Proyecto";
+            // 
+            // txtff
+            // 
+            txtff.BackColor = SystemColors.ActiveBorder;
+            txtff.Location = new Point(267, 223);
+            txtff.Name = "txtff";
+            txtff.Size = new Size(100, 23);
+            txtff.TabIndex = 29;
+            // 
+            // txtfi
+            // 
+            txtfi.BackColor = SystemColors.ActiveBorder;
+            txtfi.Location = new Point(267, 184);
+            txtfi.Name = "txtfi";
+            txtfi.Size = new Size(100, 23);
+            txtfi.TabIndex = 28;
             // 
             // Txtdescripcion
             // 
@@ -140,6 +157,7 @@
             Btnguardar.TabIndex = 22;
             Btnguardar.Text = "GUARDAR PROYECTO";
             Btnguardar.UseVisualStyleBackColor = false;
+            Btnguardar.Click += Btnguardar_Click;
             // 
             // Label7
             // 
@@ -276,20 +294,6 @@
             pictureBox2.TabIndex = 19;
             pictureBox2.TabStop = false;
             // 
-            // dtpinnicio
-            // 
-            dtpinnicio.Location = new Point(267, 178);
-            dtpinnicio.Name = "dtpinnicio";
-            dtpinnicio.Size = new Size(200, 23);
-            dtpinnicio.TabIndex = 30;
-            // 
-            // dtpfin
-            // 
-            dtpfin.Location = new Point(267, 218);
-            dtpfin.Name = "dtpfin";
-            dtpfin.Size = new Size(200, 23);
-            dtpfin.TabIndex = 31;
-            // 
             // proyecto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -310,6 +314,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
+
+
 
         #endregion
 
@@ -338,7 +344,7 @@
         internal DataGridViewTextBoxColumn Column6;
         private Panel panel1;
         private PictureBox pictureBox2;
-        private DateTimePicker dtpfin;
-        private DateTimePicker dtpinnicio;
+        internal TextBox txtff;
+        internal TextBox txtfi;
     }
 }

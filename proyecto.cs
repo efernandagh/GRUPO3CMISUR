@@ -12,9 +12,17 @@ namespace INICIO
 {
     public partial class proyecto : Form
     {
+
+
         public proyecto()
         {
             InitializeComponent();
+        }
+
+        private void Btnguardar_Click(object sender, EventArgs e)
+        {
+         
+
         }
 
         private void proyecto_Load(object sender, EventArgs e)

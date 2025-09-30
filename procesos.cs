@@ -16,5 +16,10 @@ namespace INICIO
         {
             InitializeComponent();
         }
+
+        private void procesos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
