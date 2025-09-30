@@ -53,7 +53,7 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(108, 40);
+            panel1.Location = new Point(163, 28);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(494, 305);
@@ -152,7 +152,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(128, 255, 128);
+            BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(848, 404);
             Controls.Add(panel1);
             Name = "pagos";
