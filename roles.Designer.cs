@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             GroupBox1 = new GroupBox();
+            btncancelar = new Button();
+            btneliminar = new Button();
             TextBox3 = new TextBox();
             TextBox2 = new TextBox();
             TextBox1 = new TextBox();
@@ -40,8 +42,6 @@
             Nombre = new DataGridViewTextBoxColumn();
             Apellido = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
-            btneliminar = new Button();
-            btncancelar = new Button();
             GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DataGridView1).BeginInit();
             SuspendLayout();
@@ -66,6 +66,36 @@
             GroupBox1.TabIndex = 12;
             GroupBox1.TabStop = false;
             GroupBox1.Text = "Roles";
+            // 
+            // btncancelar
+            // 
+            btncancelar.BackColor = SystemColors.ActiveBorder;
+            btncancelar.FlatAppearance.BorderSize = 0;
+            btncancelar.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btncancelar.FlatStyle = FlatStyle.Flat;
+            btncancelar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btncancelar.ForeColor = Color.White;
+            btncancelar.Location = new Point(226, 223);
+            btncancelar.Name = "btncancelar";
+            btncancelar.Size = new Size(71, 23);
+            btncancelar.TabIndex = 10;
+            btncancelar.Text = "Cancelar";
+            btncancelar.UseVisualStyleBackColor = false;
+            // 
+            // btneliminar
+            // 
+            btneliminar.BackColor = SystemColors.ActiveBorder;
+            btneliminar.FlatAppearance.BorderSize = 0;
+            btneliminar.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btneliminar.FlatStyle = FlatStyle.Flat;
+            btneliminar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btneliminar.ForeColor = Color.White;
+            btneliminar.Location = new Point(116, 223);
+            btneliminar.Name = "btneliminar";
+            btneliminar.Size = new Size(71, 23);
+            btneliminar.TabIndex = 9;
+            btneliminar.Text = "Eliminar";
+            btneliminar.UseVisualStyleBackColor = false;
             // 
             // TextBox3
             // 
@@ -163,36 +193,6 @@
             // 
             Descripcion.HeaderText = "DESCRIPCION";
             Descripcion.Name = "Descripcion";
-            // 
-            // btneliminar
-            // 
-            btneliminar.BackColor = SystemColors.ActiveBorder;
-            btneliminar.FlatAppearance.BorderSize = 0;
-            btneliminar.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
-            btneliminar.FlatStyle = FlatStyle.Flat;
-            btneliminar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btneliminar.ForeColor = Color.White;
-            btneliminar.Location = new Point(127, 223);
-            btneliminar.Name = "btneliminar";
-            btneliminar.Size = new Size(71, 23);
-            btneliminar.TabIndex = 9;
-            btneliminar.Text = "Eliminar";
-            btneliminar.UseVisualStyleBackColor = false;
-            // 
-            // btncancelar
-            // 
-            btncancelar.BackColor = SystemColors.ActiveBorder;
-            btncancelar.FlatAppearance.BorderSize = 0;
-            btncancelar.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
-            btncancelar.FlatStyle = FlatStyle.Flat;
-            btncancelar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btncancelar.ForeColor = Color.White;
-            btncancelar.Location = new Point(226, 223);
-            btncancelar.Name = "btncancelar";
-            btncancelar.Size = new Size(71, 23);
-            btncancelar.TabIndex = 10;
-            btncancelar.Text = "Cancelar";
-            btncancelar.UseVisualStyleBackColor = false;
             // 
             // roles
             // 
