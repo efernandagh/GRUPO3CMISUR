@@ -32,7 +32,7 @@
             TextBox3 = new TextBox();
             TextBox2 = new TextBox();
             TextBox1 = new TextBox();
-            Button1 = new Button();
+            btnguardar = new Button();
             Label3 = new Label();
             Label2 = new Label();
             Label1 = new Label();
@@ -40,19 +40,26 @@
             Nombre = new DataGridViewTextBoxColumn();
             Apellido = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
+            btneliminar = new Button();
+            btncancelar = new Button();
             GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DataGridView1).BeginInit();
             SuspendLayout();
             // 
             // GroupBox1
             // 
+            GroupBox1.BackColor = Color.CornflowerBlue;
+            GroupBox1.Controls.Add(btncancelar);
+            GroupBox1.Controls.Add(btneliminar);
             GroupBox1.Controls.Add(TextBox3);
             GroupBox1.Controls.Add(TextBox2);
             GroupBox1.Controls.Add(TextBox1);
-            GroupBox1.Controls.Add(Button1);
+            GroupBox1.Controls.Add(btnguardar);
             GroupBox1.Controls.Add(Label3);
             GroupBox1.Controls.Add(Label2);
             GroupBox1.Controls.Add(Label1);
+            GroupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            GroupBox1.ForeColor = Color.White;
             GroupBox1.Location = new Point(252, 34);
             GroupBox1.Name = "GroupBox1";
             GroupBox1.Size = new Size(330, 275);
@@ -62,58 +69,73 @@
             // 
             // TextBox3
             // 
+            TextBox3.BackColor = SystemColors.ActiveBorder;
             TextBox3.Location = new Point(127, 131);
             TextBox3.Name = "TextBox3";
-            TextBox3.Size = new Size(100, 23);
+            TextBox3.Size = new Size(100, 25);
             TextBox3.TabIndex = 8;
             // 
             // TextBox2
             // 
+            TextBox2.BackColor = SystemColors.ActiveBorder;
             TextBox2.Location = new Point(127, 78);
             TextBox2.Name = "TextBox2";
-            TextBox2.Size = new Size(100, 23);
+            TextBox2.Size = new Size(100, 25);
             TextBox2.TabIndex = 7;
             // 
             // TextBox1
             // 
+            TextBox1.BackColor = SystemColors.ActiveBorder;
             TextBox1.Location = new Point(127, 29);
             TextBox1.Name = "TextBox1";
-            TextBox1.Size = new Size(100, 23);
+            TextBox1.Size = new Size(100, 25);
             TextBox1.TabIndex = 6;
             // 
-            // Button1
+            // btnguardar
             // 
-            Button1.Location = new Point(101, 206);
-            Button1.Name = "Button1";
-            Button1.Size = new Size(112, 23);
-            Button1.TabIndex = 5;
-            Button1.Text = "Guardar rol";
-            Button1.UseVisualStyleBackColor = true;
+            btnguardar.BackColor = SystemColors.ActiveBorder;
+            btnguardar.FlatAppearance.BorderSize = 0;
+            btnguardar.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnguardar.FlatStyle = FlatStyle.Flat;
+            btnguardar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnguardar.ForeColor = Color.White;
+            btnguardar.Location = new Point(6, 223);
+            btnguardar.Name = "btnguardar";
+            btnguardar.Size = new Size(80, 23);
+            btnguardar.TabIndex = 5;
+            btnguardar.Text = "Guardar ";
+            btnguardar.UseVisualStyleBackColor = false;
             // 
             // Label3
             // 
             Label3.AutoSize = true;
+            Label3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            Label3.ForeColor = Color.White;
             Label3.Location = new Point(22, 139);
             Label3.Name = "Label3";
-            Label3.Size = new Size(72, 15);
+            Label3.Size = new Size(80, 17);
             Label3.TabIndex = 2;
             Label3.Text = "Descripción:";
             // 
             // Label2
             // 
             Label2.AutoSize = true;
+            Label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            Label2.ForeColor = Color.White;
             Label2.Location = new Point(20, 86);
             Label2.Name = "Label2";
-            Label2.Size = new Size(74, 15);
+            Label2.Size = new Size(84, 17);
             Label2.TabIndex = 1;
             Label2.Text = "Nombre Rol:";
             // 
             // Label1
             // 
             Label1.AutoSize = true;
+            Label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            Label1.ForeColor = Color.White;
             Label1.Location = new Point(31, 32);
             Label1.Name = "Label1";
-            Label1.Size = new Size(37, 15);
+            Label1.Size = new Size(43, 17);
             Label1.TabIndex = 0;
             Label1.Text = "Id rol:";
             // 
@@ -142,13 +164,45 @@
             Descripcion.HeaderText = "DESCRIPCION";
             Descripcion.Name = "Descripcion";
             // 
+            // btneliminar
+            // 
+            btneliminar.BackColor = SystemColors.ActiveBorder;
+            btneliminar.FlatAppearance.BorderSize = 0;
+            btneliminar.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btneliminar.FlatStyle = FlatStyle.Flat;
+            btneliminar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btneliminar.ForeColor = Color.White;
+            btneliminar.Location = new Point(127, 223);
+            btneliminar.Name = "btneliminar";
+            btneliminar.Size = new Size(71, 23);
+            btneliminar.TabIndex = 9;
+            btneliminar.Text = "Eliminar";
+            btneliminar.UseVisualStyleBackColor = false;
+            // 
+            // btncancelar
+            // 
+            btncancelar.BackColor = SystemColors.ActiveBorder;
+            btncancelar.FlatAppearance.BorderSize = 0;
+            btncancelar.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btncancelar.FlatStyle = FlatStyle.Flat;
+            btncancelar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btncancelar.ForeColor = Color.White;
+            btncancelar.Location = new Point(226, 223);
+            btncancelar.Name = "btncancelar";
+            btncancelar.Size = new Size(71, 23);
+            btncancelar.TabIndex = 10;
+            btncancelar.Text = "Cancelar";
+            btncancelar.UseVisualStyleBackColor = false;
+            // 
             // roles
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(800, 450);
             Controls.Add(DataGridView1);
             Controls.Add(GroupBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "roles";
             Text = "roles";
             GroupBox1.ResumeLayout(false);
@@ -163,7 +217,7 @@
         internal TextBox TextBox3;
         internal TextBox TextBox2;
         internal TextBox TextBox1;
-        internal Button Button1;
+        internal Button btnguardar;
         internal Label Label3;
         internal Label Label2;
         internal Label Label1;
@@ -171,5 +225,7 @@
         internal DataGridViewTextBoxColumn Nombre;
         internal DataGridViewTextBoxColumn Apellido;
         internal DataGridViewTextBoxColumn Descripcion;
+        internal Button btncancelar;
+        internal Button btneliminar;
     }
 }
