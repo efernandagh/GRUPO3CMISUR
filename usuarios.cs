@@ -143,5 +143,10 @@ namespace INICIO
         }
 
 
+
+        private void usuarios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     }
