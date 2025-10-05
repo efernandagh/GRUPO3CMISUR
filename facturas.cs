@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace INICIO
 {
     public partial class facturas : Form
     {
+        string conexion = "Server=DESKTOP-8QJ2O4S\\ENIAGOMEZ;Database=MECANICA_INDUSTRIAL;Integrated Security=True;TrustServerCertificate=True;";
         public facturas()
         {
             InitializeComponent();
@@ -39,6 +41,9 @@ namespace INICIO
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            
+            
+            
             // Validar que los campos no estén vacíos
             if (string.IsNullOrWhiteSpace(txtContrato.Text))
             {

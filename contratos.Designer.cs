@@ -161,6 +161,7 @@
             Controls.Add(groupBox1);
             Name = "contratos";
             Text = "contratos";
+            Load += contratos_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

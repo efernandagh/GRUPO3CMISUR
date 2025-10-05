@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            txtidusuario = new TextBox();
+            label1 = new Label();
             btncancelar = new Button();
             btneliminar = new Button();
             btnGuardar = new Button();
@@ -45,8 +47,6 @@
             txtrolusuario = new TextBox();
             txtclaveusuario = new TextBox();
             txtcorreousuario = new TextBox();
-            label1 = new Label();
-            txtidusuario = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -78,6 +78,27 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(335, 369);
             panel1.TabIndex = 7;
+            panel1.Paint += panel1_Paint;
+            // 
+            // txtidusuario
+            // 
+            txtidusuario.BackColor = SystemColors.ActiveBorder;
+            txtidusuario.Location = new Point(161, 23);
+            txtidusuario.Margin = new Padding(3, 2, 3, 2);
+            txtidusuario.Name = "txtidusuario";
+            txtidusuario.Size = new Size(125, 25);
+            txtidusuario.TabIndex = 16;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(43, 26);
+            label1.Name = "label1";
+            label1.Size = new Size(63, 17);
+            label1.TabIndex = 15;
+            label1.Text = "Id usuario";
             // 
             // btncancelar
             // 
@@ -216,7 +237,7 @@
             // txtnombreusuario
             // 
             txtnombreusuario.BackColor = SystemColors.ActiveBorder;
-            txtnombreusuario.Location = new Point(161, 51);
+            txtnombreusuario.Location = new Point(161, 59);
             txtnombreusuario.Margin = new Padding(3, 2, 3, 2);
             txtnombreusuario.Name = "txtnombreusuario";
             txtnombreusuario.Size = new Size(125, 25);
@@ -258,26 +279,6 @@
             txtcorreousuario.Name = "txtcorreousuario";
             txtcorreousuario.Size = new Size(125, 25);
             txtcorreousuario.TabIndex = 4;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(43, 26);
-            label1.Name = "label1";
-            label1.Size = new Size(63, 17);
-            label1.TabIndex = 15;
-            label1.Text = "Id usuario";
-            // 
-            // txtidusuario
-            // 
-            txtidusuario.BackColor = SystemColors.ActiveBorder;
-            txtidusuario.Location = new Point(161, 22);
-            txtidusuario.Margin = new Padding(3, 2, 3, 2);
-            txtidusuario.Name = "txtidusuario";
-            txtidusuario.Size = new Size(125, 25);
-            txtidusuario.TabIndex = 16;
             // 
             // usuarios
             // 
