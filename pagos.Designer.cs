@@ -93,6 +93,7 @@
             cboEstado.Name = "cboEstado";
             cboEstado.Size = new Size(121, 23);
             cboEstado.TabIndex = 15;
+            cboEstado.SelectedIndexChanged += cboEstado_SelectedIndexChanged;
             // 
             // btnSalir
             // 

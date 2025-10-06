@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            cboidcontrato = new ComboBox();
+            txtidfactura = new TextBox();
+            label6 = new Label();
             btnGuardar = new Button();
             btnSalir = new Button();
             btnLimpiar = new Button();
-            cmbContrato = new ComboBox();
             cmbMetodoPago = new ComboBox();
             pictureBox1 = new PictureBox();
             dtpFecha = new DateTimePicker();
@@ -49,10 +51,12 @@
             // panel1
             // 
             panel1.BackColor = Color.CornflowerBlue;
+            panel1.Controls.Add(cboidcontrato);
+            panel1.Controls.Add(txtidfactura);
+            panel1.Controls.Add(label6);
             panel1.Controls.Add(btnGuardar);
             panel1.Controls.Add(btnSalir);
             panel1.Controls.Add(btnLimpiar);
-            panel1.Controls.Add(cmbContrato);
             panel1.Controls.Add(cmbMetodoPago);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(dtpFecha);
@@ -68,6 +72,34 @@
             panel1.Size = new Size(523, 341);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
+            // 
+            // cboidcontrato
+            // 
+            cboidcontrato.FormattingEnabled = true;
+            cboidcontrato.Location = new Point(226, 85);
+            cboidcontrato.Name = "cboidcontrato";
+            cboidcontrato.Size = new Size(121, 23);
+            cboidcontrato.TabIndex = 18;
+            cboidcontrato.SelectedIndexChanged += cboidcontrato_SelectedIndexChanged;
+            // 
+            // txtidfactura
+            // 
+            txtidfactura.Location = new Point(226, 41);
+            txtidfactura.Margin = new Padding(3, 2, 3, 2);
+            txtidfactura.Name = "txtidfactura";
+            txtidfactura.Size = new Size(124, 23);
+            txtidfactura.TabIndex = 17;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(50, 39);
+            label6.Name = "label6";
+            label6.Size = new Size(105, 21);
+            label6.TabIndex = 16;
+            label6.Text = "ID FACTURA:";
             // 
             // btnGuardar
             // 
@@ -99,15 +131,6 @@
             btnLimpiar.UseVisualStyleBackColor = true;
             btnLimpiar.Click += btnLimpiar_Click;
             // 
-            // cmbContrato
-            // 
-            cmbContrato.FormattingEnabled = true;
-            cmbContrato.Items.AddRange(new object[] { "CONTRATO DE SERVICIOS", "CONTRATO DE COMPRA", "CONTRATO DE MANTENIMIENTO" });
-            cmbContrato.Location = new Point(226, 57);
-            cmbContrato.Name = "cmbContrato";
-            cmbContrato.Size = new Size(121, 23);
-            cmbContrato.TabIndex = 11;
-            // 
             // cmbMetodoPago
             // 
             cmbMetodoPago.FormattingEnabled = true;
@@ -116,6 +139,7 @@
             cmbMetodoPago.Name = "cmbMetodoPago";
             cmbMetodoPago.Size = new Size(121, 23);
             cmbMetodoPago.TabIndex = 10;
+            cmbMetodoPago.SelectedIndexChanged += cmbMetodoPago_SelectedIndexChanged;
             // 
             // pictureBox1
             // 
@@ -182,11 +206,11 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(50, 55);
+            label2.Location = new Point(50, 83);
             label2.Name = "label2";
-            label2.Size = new Size(98, 21);
+            label2.Size = new Size(119, 21);
             label2.TabIndex = 1;
-            label2.Text = "CONTRATO:";
+            label2.Text = "ID CONTRATO:";
             // 
             // label1
             // 
@@ -227,10 +251,12 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;
-        private ComboBox cmbContrato;
         private ComboBox cmbMetodoPago;
         private Button btnGuardar;
         private Button btnSalir;
         private Button btnLimpiar;
+        private TextBox txtidfactura;
+        private Label label6;
+        private ComboBox cboidcontrato;
     }
 }

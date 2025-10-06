@@ -167,6 +167,11 @@ namespace INICIO
 
             }
         }
+
+        private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

@@ -7,19 +7,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace INICIO
 {
     public partial class facturas : Form
     {
+        string conexion = "Server=DESKTOP-8QJ2O4S\\ENIAGOMEZ;Database=MECANICA_INDUSTRIAL;Integrated Security=True;TrustServerCertificate=True;";
         public facturas()
         {
             InitializeComponent();
+
         }
 
         private void facturas_Load(object sender, EventArgs e)
         {
+            // 🔹 Cargar contratos
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(conexion))
+                {
+                    conn.Open();
+                    string query = "SELECT ID_CONTRATO FROM CONTRATOS";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
 
+                    cboidcontrato.Items.Clear();
+
+                    while (reader.Read())
+                    {
+                        cboidcontrato.Items.Add(reader["ID_CONTRATO"].ToString());
+                    }
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("❌ Error al cargar contratos: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // 🔹 Cargar métodos de pago
+            cmbMetodoPago.Items.Clear();
+            cmbMetodoPago.Items.Add("Efectivo");
+            cmbMetodoPago.Items.Add("Tarjeta");
+            cmbMetodoPago.Items.Add("Transferencia");
+            cmbMetodoPago.Items.Add("Depósito");
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -39,8 +72,9 @@ namespace INICIO
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            // Limpiar ComboBox de Contrato
-            cmbContrato.SelectedIndex = -1;
+            txtidfactura.Clear();
+            // Limpiar ComboBox de Método de Pago
+            cboidcontrato.SelectedIndex = -1;
 
             // Establecer fecha actual
             dtpFecha.Value = DateTime.Now;
@@ -55,8 +89,6 @@ namespace INICIO
             MessageBox.Show("Todos los campos han sido limpiados", "Información",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Poner el foco en el primer campo
-            cmbContrato.Focus();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -77,16 +109,60 @@ namespace INICIO
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            // VALIDACIÓN 1: Verificar que se haya seleccionado un tipo de contrato
-            if (cmbContrato.SelectedIndex == -1)
+            // Validar campos
+            if (string.IsNullOrWhiteSpace(txtidfactura.Text) ||
+                cboidcontrato.SelectedIndex == -1 ||
+                string.IsNullOrWhiteSpace(txtMontoTotal.Text) ||
+                cmbMetodoPago.SelectedIndex == -1)
             {
-                MessageBox.Show("Por favor seleccione un tipo de contrato",
-                    "Campo Requerido",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                cmbContrato.Focus();
+                MessageBox.Show("⚠️ Por favor, completa todos los campos.",
+                                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            // Validar que el monto sea numérico
+            if (!decimal.TryParse(txtMontoTotal.Text, out decimal montoDecimal))
+            {
+                MessageBox.Show("⚠️ El campo MONTO debe ser un número válido.",
+                                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Insertar en la base de datos
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                try
+                {
+                    conn.Open();
+
+                    string query = "INSERT INTO FACTURAS (ID_FACTURA, ID_CONTRATO, FECHA_FACTURA, MONTO_TOTAL, METODO_PAGO) " +
+                                   "VALUES (@idfactura, @idcontrato, @fecha, @monto, @metodo)";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@idfactura", Convert.ToInt32(txtidfactura.Text));
+                    cmd.Parameters.AddWithValue("@idcontrato", Convert.ToInt32(cboidcontrato.SelectedItem));
+                    cmd.Parameters.AddWithValue("@fecha", dtpFecha.Value);
+                    cmd.Parameters.AddWithValue("@monto", montoDecimal);
+                    cmd.Parameters.AddWithValue("@metodo", cmbMetodoPago.SelectedItem.ToString());
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("✅ Factura guardada correctamente.",
+                                    "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("❌ Error al guardar: " + ex.Message,
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+
+
+
 
             // VALIDACIÓN 2: Verificar que se haya ingresado un monto
             if (string.IsNullOrWhiteSpace(txtMontoTotal.Text))
@@ -141,7 +217,7 @@ namespace INICIO
             string mensaje = "═══════════════════════════════\n";
             mensaje += "   FACTURA GUARDADA EXITOSAMENTE\n";
             mensaje += "═══════════════════════════════\n\n";
-            mensaje += "📋 Tipo de Contrato:\n    " + cmbContrato.SelectedItem.ToString() + "\n\n";
+            mensaje += "📋 Tipo de Contrato:\n    " + cboidcontrato.SelectedItem.ToString() + "\n\n";
             mensaje += "📅 Fecha:\n    " + dtpFecha.Value.ToString("dddd, dd 'de' MMMM 'de' yyyy") + "\n\n";
             mensaje += "💰 Monto Total:\n    L. " + monto.ToString("N2") + "\n\n";
             mensaje += "💳 Método de Pago:\n    " + cmbMetodoPago.SelectedItem.ToString() + "\n";
@@ -175,5 +251,27 @@ namespace INICIO
                 this.Close();
             }
         }
+
+        private void cmbContrato_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboidcontrato_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cmbMetodoPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+
+
+        }
+      
     }
+
+
 }
+
+
