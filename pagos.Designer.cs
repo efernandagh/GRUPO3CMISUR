@@ -137,6 +137,7 @@
             txtPago.Name = "txtPago";
             txtPago.Size = new Size(123, 23);
             txtPago.TabIndex = 11;
+            txtPago.KeyPress += txtMonto_KeyPress;
             // 
             // label6
             // 
