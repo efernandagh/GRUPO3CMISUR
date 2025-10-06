@@ -163,7 +163,7 @@ namespace INICIO
         private void btnproc_Click(object sender, EventArgs e)
         {
             menupa.Visible = false;
-            AbrirFormulario(new procesos());
+            AbrirFormulario(new Procesos());
         }
 
         private void btnservi_Click(object sender, EventArgs e)

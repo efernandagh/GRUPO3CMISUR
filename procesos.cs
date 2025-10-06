@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace INICIO
 {
-    public partial class procesos : Form
+    public partial class Procesos : Form
     {
-        public procesos()
+        public Procesos()
         {
             InitializeComponent();
         }

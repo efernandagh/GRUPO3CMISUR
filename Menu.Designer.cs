@@ -92,9 +92,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Calisto MT", 24F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(390, 9);
+            label1.Location = new Point(446, 12);
             label1.Name = "label1";
-            label1.Size = new Size(112, 38);
+            label1.Size = new Size(137, 47);
             label1.TabIndex = 0;
             label1.Text = "MENÚ";
             label1.Click += label1_Click;
@@ -102,9 +102,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(3, 3);
+            pictureBox2.Location = new Point(3, 4);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(69, 70);
+            pictureBox2.Size = new Size(79, 93);
             pictureBox2.TabIndex = 18;
             pictureBox2.TabStop = false;
             // 
@@ -116,8 +117,9 @@
             Barradetitulo.Controls.Add(pictureBox2);
             Barradetitulo.Dock = DockStyle.Top;
             Barradetitulo.Location = new Point(0, 0);
+            Barradetitulo.Margin = new Padding(3, 4, 3, 4);
             Barradetitulo.Name = "Barradetitulo";
-            Barradetitulo.Size = new Size(899, 59);
+            Barradetitulo.Size = new Size(1027, 79);
             Barradetitulo.TabIndex = 19;
             // 
             // btncerrar
@@ -129,11 +131,11 @@
             btncerrar.FlatAppearance.MouseDownBackColor = Color.LightSkyBlue;
             btncerrar.FlatAppearance.MouseOverBackColor = Color.LightSkyBlue;
             btncerrar.FlatStyle = FlatStyle.Flat;
-            btncerrar.Location = new Point(856, 12);
+            btncerrar.Location = new Point(978, 16);
+            btncerrar.Margin = new Padding(3, 4, 3, 4);
             btncerrar.Name = "btncerrar";
-            btncerrar.Size = new Size(31, 32);
+            btncerrar.Size = new Size(35, 43);
             btncerrar.TabIndex = 30;
-            btncerrar.Text = "s";
             btncerrar.UseVisualStyleBackColor = false;
             btncerrar.Click += btncerrar_Click;
             // 
@@ -148,9 +150,10 @@
             Menuvertical.Controls.Add(Submenuproyectos);
             Menuvertical.Controls.Add(btnproyectos);
             Menuvertical.Dock = DockStyle.Left;
-            Menuvertical.Location = new Point(0, 59);
+            Menuvertical.Location = new Point(0, 79);
+            Menuvertical.Margin = new Padding(3, 4, 3, 4);
             Menuvertical.Name = "Menuvertical";
-            Menuvertical.Size = new Size(151, 429);
+            Menuvertical.Size = new Size(173, 572);
             Menuvertical.TabIndex = 20;
             // 
             // panel1
@@ -164,8 +167,9 @@
             panel1.Controls.Add(btnpro);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(151, 429);
+            panel1.Size = new Size(173, 572);
             panel1.TabIndex = 27;
             // 
             // menuinvent
@@ -173,9 +177,10 @@
             menuinvent.BackColor = Color.CornflowerBlue;
             menuinvent.Controls.Add(btnprovee);
             menuinvent.Controls.Add(btninvent2);
-            menuinvent.Location = new Point(28, 330);
+            menuinvent.Location = new Point(32, 440);
+            menuinvent.Margin = new Padding(3, 4, 3, 4);
             menuinvent.Name = "menuinvent";
-            menuinvent.Size = new Size(123, 75);
+            menuinvent.Size = new Size(141, 100);
             menuinvent.TabIndex = 26;
             menuinvent.Visible = false;
             // 
@@ -186,9 +191,10 @@
             btnprovee.FlatStyle = FlatStyle.Flat;
             btnprovee.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnprovee.ForeColor = Color.White;
-            btnprovee.Location = new Point(19, 36);
+            btnprovee.Location = new Point(14, 48);
+            btnprovee.Margin = new Padding(3, 4, 3, 4);
             btnprovee.Name = "btnprovee";
-            btnprovee.Size = new Size(85, 23);
+            btnprovee.Size = new Size(105, 31);
             btnprovee.TabIndex = 20;
             btnprovee.Text = "Proveedores";
             btnprovee.UseVisualStyleBackColor = true;
@@ -201,9 +207,10 @@
             btninvent2.FlatStyle = FlatStyle.Flat;
             btninvent2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btninvent2.ForeColor = Color.White;
-            btninvent2.Location = new Point(3, 7);
+            btninvent2.Location = new Point(3, 9);
+            btninvent2.Margin = new Padding(3, 4, 3, 4);
             btninvent2.Name = "btninvent2";
-            btninvent2.Size = new Size(117, 23);
+            btninvent2.Size = new Size(134, 31);
             btninvent2.TabIndex = 19;
             btninvent2.Text = "Inventario";
             btninvent2.UseVisualStyleBackColor = true;
@@ -217,9 +224,10 @@
             btninvent.FlatStyle = FlatStyle.Flat;
             btninvent.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btninvent.ForeColor = Color.White;
-            btninvent.Location = new Point(12, 301);
+            btninvent.Location = new Point(14, 401);
+            btninvent.Margin = new Padding(3, 4, 3, 4);
             btninvent.Name = "btninvent";
-            btninvent.Size = new Size(90, 23);
+            btninvent.Size = new Size(103, 31);
             btninvent.TabIndex = 25;
             btninvent.Text = "Inventarios";
             btninvent.UseVisualStyleBackColor = false;
@@ -230,9 +238,10 @@
             menuservi.BackColor = Color.CornflowerBlue;
             menuservi.Controls.Add(btnclien);
             menuservi.Controls.Add(btnservi2);
-            menuservi.Location = new Point(28, 206);
+            menuservi.Location = new Point(32, 275);
+            menuservi.Margin = new Padding(3, 4, 3, 4);
             menuservi.Name = "menuservi";
-            menuservi.Size = new Size(123, 75);
+            menuservi.Size = new Size(141, 100);
             menuservi.TabIndex = 24;
             menuservi.Visible = false;
             // 
@@ -243,9 +252,10 @@
             btnclien.FlatStyle = FlatStyle.Flat;
             btnclien.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnclien.ForeColor = Color.White;
-            btnclien.Location = new Point(19, 36);
+            btnclien.Location = new Point(22, 48);
+            btnclien.Margin = new Padding(3, 4, 3, 4);
             btnclien.Name = "btnclien";
-            btnclien.Size = new Size(85, 23);
+            btnclien.Size = new Size(97, 31);
             btnclien.TabIndex = 20;
             btnclien.Text = "Clientes";
             btnclien.UseVisualStyleBackColor = true;
@@ -258,9 +268,10 @@
             btnservi2.FlatStyle = FlatStyle.Flat;
             btnservi2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnservi2.ForeColor = Color.White;
-            btnservi2.Location = new Point(3, 7);
+            btnservi2.Location = new Point(3, 9);
+            btnservi2.Margin = new Padding(3, 4, 3, 4);
             btnservi2.Name = "btnservi2";
-            btnservi2.Size = new Size(117, 23);
+            btnservi2.Size = new Size(134, 31);
             btnservi2.TabIndex = 19;
             btnservi2.Text = "Servicios";
             btnservi2.UseVisualStyleBackColor = true;
@@ -274,9 +285,10 @@
             btnservi.FlatStyle = FlatStyle.Flat;
             btnservi.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnservi.ForeColor = Color.White;
-            btnservi.Location = new Point(12, 177);
+            btnservi.Location = new Point(14, 236);
+            btnservi.Margin = new Padding(3, 4, 3, 4);
             btnservi.Name = "btnservi";
-            btnservi.Size = new Size(75, 23);
+            btnservi.Size = new Size(86, 31);
             btnservi.TabIndex = 23;
             btnservi.Text = "Servicios";
             btnservi.UseVisualStyleBackColor = false;
@@ -289,9 +301,10 @@
             menupa.Controls.Add(btncontr);
             menupa.Controls.Add(btnsegui);
             menupa.Controls.Add(btnproy3);
-            menupa.Location = new Point(28, 44);
+            menupa.Location = new Point(32, 59);
+            menupa.Margin = new Padding(3, 4, 3, 4);
             menupa.Name = "menupa";
-            menupa.Size = new Size(123, 127);
+            menupa.Size = new Size(141, 169);
             menupa.TabIndex = 22;
             menupa.Visible = false;
             menupa.Paint += panel4_Paint;
@@ -303,9 +316,10 @@
             btnproc.FlatStyle = FlatStyle.Flat;
             btnproc.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnproc.ForeColor = Color.White;
-            btnproc.Location = new Point(16, 94);
+            btnproc.Location = new Point(18, 125);
+            btnproc.Margin = new Padding(3, 4, 3, 4);
             btnproc.Name = "btnproc";
-            btnproc.Size = new Size(75, 23);
+            btnproc.Size = new Size(86, 31);
             btnproc.TabIndex = 22;
             btnproc.Text = "Procesos";
             btnproc.UseVisualStyleBackColor = true;
@@ -318,9 +332,10 @@
             btncontr.FlatStyle = FlatStyle.Flat;
             btncontr.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btncontr.ForeColor = Color.White;
-            btncontr.Location = new Point(19, 65);
+            btncontr.Location = new Point(22, 87);
+            btncontr.Margin = new Padding(3, 4, 3, 4);
             btncontr.Name = "btncontr";
-            btncontr.Size = new Size(75, 23);
+            btncontr.Size = new Size(86, 31);
             btncontr.TabIndex = 21;
             btncontr.Text = "Contratos";
             btncontr.UseVisualStyleBackColor = true;
@@ -333,9 +348,10 @@
             btnsegui.FlatStyle = FlatStyle.Flat;
             btnsegui.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnsegui.ForeColor = Color.White;
-            btnsegui.Location = new Point(19, 36);
+            btnsegui.Location = new Point(14, 48);
+            btnsegui.Margin = new Padding(3, 4, 3, 4);
             btnsegui.Name = "btnsegui";
-            btnsegui.Size = new Size(85, 23);
+            btnsegui.Size = new Size(116, 31);
             btnsegui.TabIndex = 20;
             btnsegui.Text = "Seguimiento";
             btnsegui.UseVisualStyleBackColor = true;
@@ -348,9 +364,10 @@
             btnproy3.FlatStyle = FlatStyle.Flat;
             btnproy3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnproy3.ForeColor = Color.White;
-            btnproy3.Location = new Point(3, 7);
+            btnproy3.Location = new Point(3, 9);
+            btnproy3.Margin = new Padding(3, 4, 3, 4);
             btnproy3.Name = "btnproy3";
-            btnproy3.Size = new Size(117, 23);
+            btnproy3.Size = new Size(116, 31);
             btnproy3.TabIndex = 19;
             btnproy3.Text = "Proyecto inventario";
             btnproy3.UseVisualStyleBackColor = true;
@@ -364,9 +381,10 @@
             btnpro.FlatStyle = FlatStyle.Flat;
             btnpro.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnpro.ForeColor = Color.White;
-            btnpro.Location = new Point(12, 15);
+            btnpro.Location = new Point(14, 20);
+            btnpro.Margin = new Padding(3, 4, 3, 4);
             btnpro.Name = "btnpro";
-            btnpro.Size = new Size(75, 23);
+            btnpro.Size = new Size(103, 31);
             btnpro.TabIndex = 19;
             btnpro.Text = "Proyectos";
             btnpro.UseVisualStyleBackColor = false;
@@ -377,9 +395,10 @@
             submenuinvenatario.BackColor = Color.CornflowerBlue;
             submenuinvenatario.Controls.Add(btnproveedores);
             submenuinvenatario.Controls.Add(btninventario2);
-            submenuinvenatario.Location = new Point(28, 330);
+            submenuinvenatario.Location = new Point(32, 440);
+            submenuinvenatario.Margin = new Padding(3, 4, 3, 4);
             submenuinvenatario.Name = "submenuinvenatario";
-            submenuinvenatario.Size = new Size(123, 75);
+            submenuinvenatario.Size = new Size(141, 100);
             submenuinvenatario.TabIndex = 26;
             submenuinvenatario.Visible = false;
             // 
@@ -390,9 +409,10 @@
             btnproveedores.FlatStyle = FlatStyle.Flat;
             btnproveedores.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnproveedores.ForeColor = Color.White;
-            btnproveedores.Location = new Point(19, 36);
+            btnproveedores.Location = new Point(22, 48);
+            btnproveedores.Margin = new Padding(3, 4, 3, 4);
             btnproveedores.Name = "btnproveedores";
-            btnproveedores.Size = new Size(85, 23);
+            btnproveedores.Size = new Size(97, 31);
             btnproveedores.TabIndex = 20;
             btnproveedores.Text = "Proveedores";
             btnproveedores.UseVisualStyleBackColor = true;
@@ -405,9 +425,10 @@
             btninventario2.FlatStyle = FlatStyle.Flat;
             btninventario2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btninventario2.ForeColor = Color.White;
-            btninventario2.Location = new Point(3, 7);
+            btninventario2.Location = new Point(3, 9);
+            btninventario2.Margin = new Padding(3, 4, 3, 4);
             btninventario2.Name = "btninventario2";
-            btninventario2.Size = new Size(126, 23);
+            btninventario2.Size = new Size(144, 31);
             btninventario2.TabIndex = 19;
             btninventario2.Text = "Inventario";
             btninventario2.UseVisualStyleBackColor = true;
@@ -421,9 +442,10 @@
             btninventario.FlatStyle = FlatStyle.Flat;
             btninventario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btninventario.ForeColor = Color.White;
-            btninventario.Location = new Point(12, 301);
+            btninventario.Location = new Point(14, 401);
+            btninventario.Margin = new Padding(3, 4, 3, 4);
             btninventario.Name = "btninventario";
-            btninventario.Size = new Size(90, 23);
+            btninventario.Size = new Size(103, 31);
             btninventario.TabIndex = 25;
             btninventario.Text = "Inventarios";
             btninventario.UseVisualStyleBackColor = false;
@@ -434,9 +456,10 @@
             Submenuservicios.BackColor = Color.CornflowerBlue;
             Submenuservicios.Controls.Add(btnclientes);
             Submenuservicios.Controls.Add(btnservicios2);
-            Submenuservicios.Location = new Point(28, 206);
+            Submenuservicios.Location = new Point(32, 275);
+            Submenuservicios.Margin = new Padding(3, 4, 3, 4);
             Submenuservicios.Name = "Submenuservicios";
-            Submenuservicios.Size = new Size(123, 75);
+            Submenuservicios.Size = new Size(141, 100);
             Submenuservicios.TabIndex = 24;
             Submenuservicios.Visible = false;
             // 
@@ -447,9 +470,10 @@
             btnclientes.FlatStyle = FlatStyle.Flat;
             btnclientes.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnclientes.ForeColor = Color.White;
-            btnclientes.Location = new Point(19, 36);
+            btnclientes.Location = new Point(22, 48);
+            btnclientes.Margin = new Padding(3, 4, 3, 4);
             btnclientes.Name = "btnclientes";
-            btnclientes.Size = new Size(85, 23);
+            btnclientes.Size = new Size(97, 31);
             btnclientes.TabIndex = 20;
             btnclientes.Text = "Clientes";
             btnclientes.UseVisualStyleBackColor = true;
@@ -462,9 +486,10 @@
             btnservicios2.FlatStyle = FlatStyle.Flat;
             btnservicios2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnservicios2.ForeColor = Color.White;
-            btnservicios2.Location = new Point(3, 7);
+            btnservicios2.Location = new Point(3, 9);
+            btnservicios2.Margin = new Padding(3, 4, 3, 4);
             btnservicios2.Name = "btnservicios2";
-            btnservicios2.Size = new Size(126, 23);
+            btnservicios2.Size = new Size(144, 31);
             btnservicios2.TabIndex = 19;
             btnservicios2.Text = "Servicios";
             btnservicios2.UseVisualStyleBackColor = true;
@@ -478,9 +503,10 @@
             btnservicios.FlatStyle = FlatStyle.Flat;
             btnservicios.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnservicios.ForeColor = Color.White;
-            btnservicios.Location = new Point(12, 177);
+            btnservicios.Location = new Point(14, 236);
+            btnservicios.Margin = new Padding(3, 4, 3, 4);
             btnservicios.Name = "btnservicios";
-            btnservicios.Size = new Size(75, 23);
+            btnservicios.Size = new Size(86, 31);
             btnservicios.TabIndex = 23;
             btnservicios.Text = "Servicios";
             btnservicios.UseVisualStyleBackColor = false;
@@ -493,9 +519,10 @@
             Submenuproyectos.Controls.Add(btncontratos);
             Submenuproyectos.Controls.Add(btnseguimiento);
             Submenuproyectos.Controls.Add(btnproyectoinventario);
-            Submenuproyectos.Location = new Point(28, 44);
+            Submenuproyectos.Location = new Point(32, 59);
+            Submenuproyectos.Margin = new Padding(3, 4, 3, 4);
             Submenuproyectos.Name = "Submenuproyectos";
-            Submenuproyectos.Size = new Size(123, 127);
+            Submenuproyectos.Size = new Size(141, 169);
             Submenuproyectos.TabIndex = 22;
             Submenuproyectos.Visible = false;
             // 
@@ -506,9 +533,10 @@
             btnprocesos.FlatStyle = FlatStyle.Flat;
             btnprocesos.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnprocesos.ForeColor = Color.White;
-            btnprocesos.Location = new Point(16, 94);
+            btnprocesos.Location = new Point(18, 125);
+            btnprocesos.Margin = new Padding(3, 4, 3, 4);
             btnprocesos.Name = "btnprocesos";
-            btnprocesos.Size = new Size(75, 23);
+            btnprocesos.Size = new Size(86, 31);
             btnprocesos.TabIndex = 22;
             btnprocesos.Text = "Procesos";
             btnprocesos.UseVisualStyleBackColor = true;
@@ -521,9 +549,10 @@
             btncontratos.FlatStyle = FlatStyle.Flat;
             btncontratos.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btncontratos.ForeColor = Color.White;
-            btncontratos.Location = new Point(19, 65);
+            btncontratos.Location = new Point(22, 87);
+            btncontratos.Margin = new Padding(3, 4, 3, 4);
             btncontratos.Name = "btncontratos";
-            btncontratos.Size = new Size(75, 23);
+            btncontratos.Size = new Size(86, 31);
             btncontratos.TabIndex = 21;
             btncontratos.Text = "Contratos";
             btncontratos.UseVisualStyleBackColor = true;
@@ -536,9 +565,10 @@
             btnseguimiento.FlatStyle = FlatStyle.Flat;
             btnseguimiento.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnseguimiento.ForeColor = Color.White;
-            btnseguimiento.Location = new Point(19, 36);
+            btnseguimiento.Location = new Point(22, 48);
+            btnseguimiento.Margin = new Padding(3, 4, 3, 4);
             btnseguimiento.Name = "btnseguimiento";
-            btnseguimiento.Size = new Size(85, 23);
+            btnseguimiento.Size = new Size(97, 31);
             btnseguimiento.TabIndex = 20;
             btnseguimiento.Text = "Seguimiento";
             btnseguimiento.UseVisualStyleBackColor = true;
@@ -551,9 +581,10 @@
             btnproyectoinventario.FlatStyle = FlatStyle.Flat;
             btnproyectoinventario.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnproyectoinventario.ForeColor = Color.White;
-            btnproyectoinventario.Location = new Point(3, 7);
+            btnproyectoinventario.Location = new Point(3, 9);
+            btnproyectoinventario.Margin = new Padding(3, 4, 3, 4);
             btnproyectoinventario.Name = "btnproyectoinventario";
-            btnproyectoinventario.Size = new Size(126, 23);
+            btnproyectoinventario.Size = new Size(144, 31);
             btnproyectoinventario.TabIndex = 19;
             btnproyectoinventario.Text = "Proyecto inventario";
             btnproyectoinventario.UseVisualStyleBackColor = true;
@@ -567,9 +598,10 @@
             btnproyectos.FlatStyle = FlatStyle.Flat;
             btnproyectos.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnproyectos.ForeColor = Color.White;
-            btnproyectos.Location = new Point(12, 15);
+            btnproyectos.Location = new Point(14, 20);
+            btnproyectos.Margin = new Padding(3, 4, 3, 4);
             btnproyectos.Name = "btnproyectos";
-            btnproyectos.Size = new Size(75, 23);
+            btnproyectos.Size = new Size(86, 31);
             btnproyectos.TabIndex = 19;
             btnproyectos.Text = "Proyectos";
             btnproyectos.UseVisualStyleBackColor = false;
@@ -578,9 +610,10 @@
             // Panelcontenedor
             // 
             Panelcontenedor.BackColor = Color.Gray;
-            Panelcontenedor.Location = new Point(0, 59);
+            Panelcontenedor.Location = new Point(0, 79);
+            Panelcontenedor.Margin = new Padding(3, 4, 3, 4);
             Panelcontenedor.Name = "Panelcontenedor";
-            Panelcontenedor.Size = new Size(748, 429);
+            Panelcontenedor.Size = new Size(855, 572);
             Panelcontenedor.TabIndex = 21;
             Panelcontenedor.Paint += Panelcontenedor_Paint;
             // 
@@ -591,9 +624,10 @@
             panel9.Controls.Add(btnadmin);
             panel9.Controls.Add(submenufacturacion);
             panel9.Controls.Add(btnfacturacion);
-            panel9.Location = new Point(748, 59);
+            panel9.Location = new Point(855, 79);
+            panel9.Margin = new Padding(3, 4, 3, 4);
             panel9.Name = "panel9";
-            panel9.Size = new Size(151, 429);
+            panel9.Size = new Size(173, 572);
             panel9.TabIndex = 29;
             // 
             // ssubmenuadmin
@@ -601,9 +635,10 @@
             ssubmenuadmin.BackColor = Color.CornflowerBlue;
             ssubmenuadmin.Controls.Add(btnusuarios);
             ssubmenuadmin.Controls.Add(btnroles);
-            ssubmenuadmin.Location = new Point(6, 177);
+            ssubmenuadmin.Location = new Point(7, 236);
+            ssubmenuadmin.Margin = new Padding(3, 4, 3, 4);
             ssubmenuadmin.Name = "ssubmenuadmin";
-            ssubmenuadmin.Size = new Size(123, 75);
+            ssubmenuadmin.Size = new Size(141, 100);
             ssubmenuadmin.TabIndex = 29;
             ssubmenuadmin.Visible = false;
             // 
@@ -614,9 +649,10 @@
             btnusuarios.FlatStyle = FlatStyle.Flat;
             btnusuarios.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnusuarios.ForeColor = Color.White;
-            btnusuarios.Location = new Point(19, 36);
+            btnusuarios.Location = new Point(22, 48);
+            btnusuarios.Margin = new Padding(3, 4, 3, 4);
             btnusuarios.Name = "btnusuarios";
-            btnusuarios.Size = new Size(85, 23);
+            btnusuarios.Size = new Size(97, 31);
             btnusuarios.TabIndex = 20;
             btnusuarios.Text = "Usuarios";
             btnusuarios.UseVisualStyleBackColor = true;
@@ -629,9 +665,10 @@
             btnroles.FlatStyle = FlatStyle.Flat;
             btnroles.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnroles.ForeColor = Color.White;
-            btnroles.Location = new Point(3, 7);
+            btnroles.Location = new Point(3, 9);
+            btnroles.Margin = new Padding(3, 4, 3, 4);
             btnroles.Name = "btnroles";
-            btnroles.Size = new Size(117, 23);
+            btnroles.Size = new Size(134, 31);
             btnroles.TabIndex = 19;
             btnroles.Text = "Roles";
             btnroles.UseVisualStyleBackColor = true;
@@ -645,9 +682,10 @@
             btnadmin.FlatStyle = FlatStyle.Flat;
             btnadmin.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnadmin.ForeColor = Color.White;
-            btnadmin.Location = new Point(26, 148);
+            btnadmin.Location = new Point(10, 197);
+            btnadmin.Margin = new Padding(3, 4, 3, 4);
             btnadmin.Name = "btnadmin";
-            btnadmin.Size = new Size(125, 23);
+            btnadmin.Size = new Size(143, 31);
             btnadmin.TabIndex = 29;
             btnadmin.Text = "Administracion";
             btnadmin.UseVisualStyleBackColor = false;
@@ -658,9 +696,10 @@
             submenufacturacion.BackColor = Color.CornflowerBlue;
             submenufacturacion.Controls.Add(btnpagos);
             submenufacturacion.Controls.Add(btnfacturas);
-            submenufacturacion.Location = new Point(3, 44);
+            submenufacturacion.Location = new Point(3, 59);
+            submenufacturacion.Margin = new Padding(3, 4, 3, 4);
             submenufacturacion.Name = "submenufacturacion";
-            submenufacturacion.Size = new Size(123, 75);
+            submenufacturacion.Size = new Size(141, 100);
             submenufacturacion.TabIndex = 28;
             submenufacturacion.Visible = false;
             // 
@@ -671,9 +710,10 @@
             btnpagos.FlatStyle = FlatStyle.Flat;
             btnpagos.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnpagos.ForeColor = Color.White;
-            btnpagos.Location = new Point(19, 36);
+            btnpagos.Location = new Point(22, 48);
+            btnpagos.Margin = new Padding(3, 4, 3, 4);
             btnpagos.Name = "btnpagos";
-            btnpagos.Size = new Size(85, 23);
+            btnpagos.Size = new Size(97, 31);
             btnpagos.TabIndex = 20;
             btnpagos.Text = "Pagos";
             btnpagos.UseVisualStyleBackColor = true;
@@ -686,9 +726,10 @@
             btnfacturas.FlatStyle = FlatStyle.Flat;
             btnfacturas.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnfacturas.ForeColor = Color.White;
-            btnfacturas.Location = new Point(3, 7);
+            btnfacturas.Location = new Point(3, 9);
+            btnfacturas.Margin = new Padding(3, 4, 3, 4);
             btnfacturas.Name = "btnfacturas";
-            btnfacturas.Size = new Size(117, 23);
+            btnfacturas.Size = new Size(134, 31);
             btnfacturas.TabIndex = 19;
             btnfacturas.Text = "Facturas";
             btnfacturas.UseVisualStyleBackColor = true;
@@ -702,9 +743,10 @@
             btnfacturacion.FlatStyle = FlatStyle.Flat;
             btnfacturacion.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnfacturacion.ForeColor = Color.White;
-            btnfacturacion.Location = new Point(59, 15);
+            btnfacturacion.Location = new Point(10, 20);
+            btnfacturacion.Margin = new Padding(3, 4, 3, 4);
             btnfacturacion.Name = "btnfacturacion";
-            btnfacturacion.Size = new Size(89, 23);
+            btnfacturacion.Size = new Size(118, 31);
             btnfacturacion.TabIndex = 27;
             btnfacturacion.Text = "Facturacion";
             btnfacturacion.UseVisualStyleBackColor = false;
@@ -712,15 +754,16 @@
             // 
             // Menu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(899, 488);
+            ClientSize = new Size(1027, 651);
             Controls.Add(panel9);
             Controls.Add(Menuvertical);
             Controls.Add(Barradetitulo);
             Controls.Add(Panelcontenedor);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Menu";
             Text = "Menu";
             Load += Menu_Load;
