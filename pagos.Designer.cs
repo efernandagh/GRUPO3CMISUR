@@ -145,9 +145,9 @@
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.Location = new Point(36, 136);
             label6.Name = "label6";
-            label6.Size = new Size(88, 21);
+            label6.Size = new Size(105, 21);
             label6.TabIndex = 10;
-            label6.Text = " FACTURA:";
+            label6.Text = "ID FACTURA:";
             // 
             // label5
             // 
@@ -155,9 +155,9 @@
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.Location = new Point(36, 104);
             label5.Name = "label5";
-            label5.Size = new Size(57, 21);
+            label5.Size = new Size(78, 21);
             label5.TabIndex = 9;
-            label5.Text = "PAGO:";
+            label5.Text = "ID PAGO:";
             // 
             // pictureBox1
             // 

@@ -1,7 +1,11 @@
-﻿namespace INICIO
+﻿
+using Microsoft.Data.SqlClient;
+namespace INICIO
 {
     public partial class frmPagos : Form
     {
+        string conexion = "Server=DESKTOP-8QJ2O4S\\ENIAGOMEZ;Database=MECANICA_INDUSTRIAL;Integrated Security=True;TrustServerCertificate=True;";
+
         public frmPagos()
         {
             InitializeComponent();
@@ -11,7 +15,7 @@
         {
 
         }
-        
+
 
 
 
@@ -80,16 +84,22 @@
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            // Validar que todos los campos estén llenos
-            if (string.IsNullOrWhiteSpace(txtPago.Text))
+            string idPago = txtPago.Text.Trim();
+            string idFactura = txtFactura.Text.Trim();
+            string montoTexto = txtMonto.Text.Trim();
+            string estado = cboEstado.Text.Trim();
+            DateTime fecha = dtpFecha.Value;
+
+            // 🔹 Validar campos vacíos
+            if (string.IsNullOrWhiteSpace(idPago))
             {
                 MessageBox.Show("Por favor ingrese el número de PAGO", "Campo requerido",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtPago.Focus();
+                txtMonto.Focus();
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtFactura.Text))
+            if (string.IsNullOrWhiteSpace(idFactura))
             {
                 MessageBox.Show("Por favor ingrese el número de FACTURA", "Campo requerido",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -97,7 +107,7 @@
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtMonto.Text))
+            if (string.IsNullOrWhiteSpace(montoTexto))
             {
                 MessageBox.Show("Por favor ingrese el MONTO", "Campo requerido",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -105,9 +115,16 @@
                 return;
             }
 
-            // Validar que el monto sea un número válido
-            decimal monto;
-            if (!decimal.TryParse(txtMonto.Text, out monto))
+            if (string.IsNullOrWhiteSpace(estado))
+            {
+                MessageBox.Show("Por favor seleccione el ESTADO", "Campo requerido",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cboEstado.Focus();
+                return;
+            }
+
+            // 🔹 Validar que el monto sea un número válido
+            if (!decimal.TryParse(montoTexto, out decimal monto))
             {
                 MessageBox.Show("El MONTO debe ser un número válido", "Error de validación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -115,18 +132,41 @@
                 return;
             }
 
-            // Si todo es válido, mostrar mensaje de éxito
-            string mensaje = string.Format(
-                "Pago guardado exitosamente:\n\n" +
-                "Pago: {0}\n" +
-                "Factura: {1}\n" +
-                "Fecha: {2}\n" +
-                "Monto: {3:C2}\n" +
-                "Estado: {4}",
-                txtPago.Text, txtFactura.Text, dtpFecha.Value.ToLongDateString(),
-                monto, cboEstado.SelectedItem.ToString());
+            // 🔹 Insertar en la base de datos
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                try
+                {
+                    conn.Open();
 
-            MessageBox.Show(mensaje, "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string query = "INSERT INTO PAGOS (ID_PAGO, ID_FACTURA, FECHA_PAGO, MONTO_PAGO, ESTADO_PAGO) " +
+                                   "VALUES (@idpago, @idfactura, @fecha, @monto, @estado)";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@idpago", Convert.ToInt32(idPago));
+                    cmd.Parameters.AddWithValue("@idfactura", Convert.ToInt32(idFactura));
+                    cmd.Parameters.AddWithValue("@fecha", fecha);
+                    cmd.Parameters.AddWithValue("@monto", monto);
+                    cmd.Parameters.AddWithValue("@estado", estado);
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("✅ Pago guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Limpiar campos al guardar
+                    txtPago.Clear();
+                    txtFactura.Clear();
+                    txtMonto.Clear();
+                    dtpFecha.Value = DateTime.Now;
+                    cboEstado.SelectedIndex = 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("❌ Error al guardar: " + ex.Message);
+                }
+
+            }
         }
     }
+
 }
