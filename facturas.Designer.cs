@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            pictureBox1 = new PictureBox();
             btnGuardar = new Button();
+            btnSalir = new Button();
+            btnLimpiar = new Button();
+            cmbContrato = new ComboBox();
+            cmbMetodoPago = new ComboBox();
+            pictureBox1 = new PictureBox();
             dtpFecha = new DateTimePicker();
-            txtContrato = new TextBox();
             txtMontoTotal = new TextBox();
-            txtMetodoPago = new TextBox();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
@@ -47,12 +49,14 @@
             // panel1
             // 
             panel1.BackColor = Color.CornflowerBlue;
-            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(btnGuardar);
+            panel1.Controls.Add(btnSalir);
+            panel1.Controls.Add(btnLimpiar);
+            panel1.Controls.Add(cmbContrato);
+            panel1.Controls.Add(cmbMetodoPago);
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(dtpFecha);
-            panel1.Controls.Add(txtContrato);
             panel1.Controls.Add(txtMontoTotal);
-            panel1.Controls.Add(txtMetodoPago);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
@@ -65,6 +69,54 @@
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
             // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(408, 280);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(75, 23);
+            btnGuardar.TabIndex = 14;
+            btnGuardar.Text = "GUARDAR";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click_1;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Location = new Point(408, 233);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(75, 23);
+            btnSalir.TabIndex = 13;
+            btnSalir.Text = "SALIR";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Location = new Point(408, 191);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(75, 23);
+            btnLimpiar.TabIndex = 12;
+            btnLimpiar.Text = "LIMPIAR";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
+            // cmbContrato
+            // 
+            cmbContrato.FormattingEnabled = true;
+            cmbContrato.Items.AddRange(new object[] { "CONTRATO DE SERVICIOS", "CONTRATO DE COMPRA", "CONTRATO DE MANTENIMIENTO" });
+            cmbContrato.Location = new Point(226, 57);
+            cmbContrato.Name = "cmbContrato";
+            cmbContrato.Size = new Size(121, 23);
+            cmbContrato.TabIndex = 11;
+            // 
+            // cmbMetodoPago
+            // 
+            cmbMetodoPago.FormattingEnabled = true;
+            cmbMetodoPago.Items.AddRange(new object[] { "EFECTIVO", "TARJETA DEBITO", "TARJETA CREDITO", "TRANSFERENCIA", "CHEQUES" });
+            cmbMetodoPago.Location = new Point(229, 247);
+            cmbMetodoPago.Name = "cmbMetodoPago";
+            cmbMetodoPago.Size = new Size(121, 23);
+            cmbMetodoPago.TabIndex = 10;
+            // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.FACTURAS;
@@ -76,22 +128,6 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // btnGuardar
-            // 
-            btnGuardar.FlatAppearance.BorderSize = 0;
-            btnGuardar.FlatAppearance.MouseOverBackColor = SystemColors.ActiveCaption;
-            btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(385, 279);
-            btnGuardar.Margin = new Padding(3, 2, 3, 2);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(101, 29);
-            btnGuardar.TabIndex = 9;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
-            // 
             // dtpFecha
             // 
             dtpFecha.Location = new Point(207, 129);
@@ -100,29 +136,13 @@
             dtpFecha.Size = new Size(219, 23);
             dtpFecha.TabIndex = 8;
             // 
-            // txtContrato
-            // 
-            txtContrato.Location = new Point(207, 53);
-            txtContrato.Margin = new Padding(3, 2, 3, 2);
-            txtContrato.Name = "txtContrato";
-            txtContrato.Size = new Size(124, 23);
-            txtContrato.TabIndex = 7;
-            // 
             // txtMontoTotal
             // 
-            txtMontoTotal.Location = new Point(207, 191);
+            txtMontoTotal.Location = new Point(226, 195);
             txtMontoTotal.Margin = new Padding(3, 2, 3, 2);
             txtMontoTotal.Name = "txtMontoTotal";
             txtMontoTotal.Size = new Size(124, 23);
             txtMontoTotal.TabIndex = 6;
-            // 
-            // txtMetodoPago
-            // 
-            txtMetodoPago.Location = new Point(210, 256);
-            txtMetodoPago.Margin = new Padding(3, 2, 3, 2);
-            txtMetodoPago.Name = "txtMetodoPago";
-            txtMetodoPago.Size = new Size(124, 23);
-            txtMetodoPago.TabIndex = 5;
             // 
             // label5
             // 
@@ -199,16 +219,18 @@
         #endregion
 
         private Panel panel1;
-        private Button btnGuardar;
         private DateTimePicker dtpFecha;
-        private TextBox txtContrato;
         private TextBox txtMontoTotal;
-        private TextBox txtMetodoPago;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;
+        private ComboBox cmbContrato;
+        private ComboBox cmbMetodoPago;
+        private Button btnGuardar;
+        private Button btnSalir;
+        private Button btnLimpiar;
     }
 }
