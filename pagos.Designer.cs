@@ -1,6 +1,6 @@
 ﻿namespace INICIO
 {
-    partial class pagos
+    partial class frmPagos
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,18 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnGuardar = new Button();
+            cboEstado = new ComboBox();
+            btnSalir = new Button();
+            btnLimpiar = new Button();
+            txtFactura = new TextBox();
+            txtPago = new TextBox();
+            label6 = new Label();
+            label5 = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            btnGuardar = new Button();
             dtpFecha = new DateTimePicker();
             txtMonto = new TextBox();
-            txtEstado = new TextBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
@@ -45,12 +51,18 @@
             // panel1
             // 
             panel1.BackColor = Color.CornflowerBlue;
+            panel1.Controls.Add(btnGuardar);
+            panel1.Controls.Add(cboEstado);
+            panel1.Controls.Add(btnSalir);
+            panel1.Controls.Add(btnLimpiar);
+            panel1.Controls.Add(txtFactura);
+            panel1.Controls.Add(txtPago);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label5);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(btnGuardar);
             panel1.Controls.Add(dtpFecha);
             panel1.Controls.Add(txtMonto);
-            panel1.Controls.Add(txtEstado);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
@@ -60,6 +72,91 @@
             panel1.Size = new Size(494, 305);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.BackColor = Color.FromArgb(192, 192, 255);
+            btnGuardar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGuardar.Location = new Point(366, 127);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(114, 38);
+            btnGuardar.TabIndex = 16;
+            btnGuardar.Text = "GUARDAR";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click_1;
+            // 
+            // cboEstado
+            // 
+            cboEstado.FormattingEnabled = true;
+            cboEstado.Items.AddRange(new object[] { "PAGADO", "PENDIENTE", "FALLIDO", "AUTORIZADO", "REFUNDIDO" });
+            cboEstado.Location = new Point(135, 260);
+            cboEstado.Name = "cboEstado";
+            cboEstado.Size = new Size(121, 23);
+            cboEstado.TabIndex = 15;
+            // 
+            // btnSalir
+            // 
+            btnSalir.BackColor = Color.FromArgb(128, 128, 255);
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSalir.Location = new Point(366, 237);
+            btnSalir.Margin = new Padding(3, 2, 3, 2);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(94, 32);
+            btnSalir.TabIndex = 14;
+            btnSalir.Text = "SALIR";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.BackColor = Color.FromArgb(128, 128, 255);
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLimpiar.Location = new Point(366, 185);
+            btnLimpiar.Margin = new Padding(3, 2, 3, 2);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(94, 32);
+            btnLimpiar.TabIndex = 13;
+            btnLimpiar.Text = "LIMPIAR";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
+            // txtFactura
+            // 
+            txtFactura.Location = new Point(167, 133);
+            txtFactura.Margin = new Padding(3, 2, 3, 2);
+            txtFactura.Name = "txtFactura";
+            txtFactura.Size = new Size(123, 23);
+            txtFactura.TabIndex = 12;
+            // 
+            // txtPago
+            // 
+            txtPago.Location = new Point(167, 106);
+            txtPago.Margin = new Padding(3, 2, 3, 2);
+            txtPago.Name = "txtPago";
+            txtPago.Size = new Size(123, 23);
+            txtPago.TabIndex = 11;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(36, 136);
+            label6.Name = "label6";
+            label6.Size = new Size(88, 21);
+            label6.TabIndex = 10;
+            label6.Text = " FACTURA:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(36, 104);
+            label5.Name = "label5";
+            label5.Size = new Size(57, 21);
+            label5.TabIndex = 9;
+            label5.Text = "PAGO:";
             // 
             // pictureBox1
             // 
@@ -81,23 +178,9 @@
             label1.TabIndex = 0;
             label1.Text = "PAGOS";
             // 
-            // btnGuardar
-            // 
-            btnGuardar.BackColor = Color.FromArgb(128, 128, 255);
-            btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGuardar.Location = new Point(367, 231);
-            btnGuardar.Margin = new Padding(3, 2, 3, 2);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(94, 32);
-            btnGuardar.TabIndex = 8;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = false;
-            btnGuardar.Click += btnGuardar_Click;
-            // 
             // dtpFecha
             // 
-            dtpFecha.Location = new Point(131, 111);
+            dtpFecha.Location = new Point(131, 174);
             dtpFecha.Margin = new Padding(3, 2, 3, 2);
             dtpFecha.Name = "dtpFecha";
             dtpFecha.Size = new Size(186, 23);
@@ -105,26 +188,18 @@
             // 
             // txtMonto
             // 
-            txtMonto.Location = new Point(131, 167);
+            txtMonto.Location = new Point(131, 213);
             txtMonto.Margin = new Padding(3, 2, 3, 2);
             txtMonto.Name = "txtMonto";
             txtMonto.Size = new Size(123, 23);
             txtMonto.TabIndex = 5;
             txtMonto.KeyPress += txtMonto_KeyPress;
             // 
-            // txtEstado
-            // 
-            txtEstado.Location = new Point(131, 231);
-            txtEstado.Margin = new Padding(3, 2, 3, 2);
-            txtEstado.Name = "txtEstado";
-            txtEstado.Size = new Size(123, 23);
-            txtEstado.TabIndex = 4;
-            // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(21, 239);
+            label4.Location = new Point(36, 260);
             label4.Name = "label4";
             label4.Size = new Size(75, 21);
             label4.TabIndex = 3;
@@ -134,7 +209,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(20, 175);
+            label3.Location = new Point(36, 215);
             label3.Name = "label3";
             label3.Size = new Size(74, 21);
             label3.TabIndex = 2;
@@ -144,21 +219,22 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(20, 119);
+            label2.Location = new Point(36, 176);
             label2.Name = "label2";
             label2.Size = new Size(64, 21);
             label2.TabIndex = 1;
             label2.Text = "FECHA:";
             // 
-            // pagos
+            // frmPagos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(848, 404);
             Controls.Add(panel1);
-            Name = "pagos";
+            Name = "frmPagos";
             Text = "pagos";
+            Load += pagos_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -167,14 +243,20 @@
 
         #endregion
         private Panel panel1;
-        private Button btnGuardar;
         private DateTimePicker dtpFecha;
         private TextBox txtMonto;
-        private TextBox txtEstado;
         private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;
+        private TextBox txtFactura;
+        private TextBox txtPago;
+        private Label label6;
+        private Label label5;
+        private Button btnSalir;
+        private Button btnLimpiar;
+        private ComboBox cboEstado;
+        private Button btnGuardar;
     }
 }

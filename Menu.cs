@@ -111,7 +111,7 @@ namespace INICIO
         private void btnpagos_Click(object sender, EventArgs e)
         {
             submenufacturacion.Visible = false;
-            AbrirFormulario(new pagos());
+            AbrirFormulario(new frmPagos());
         }
 
         private void btnadmin_Click(object sender, EventArgs e)
