@@ -103,7 +103,7 @@ namespace INICIO
             button1.Name = "button1";
             button1.Size = new Size(103, 31);
             button1.TabIndex = 33;
-            button1.Text = "GUARDAR";
+            button1.Text = "V";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -284,11 +284,11 @@ namespace INICIO
             // 
             dgvproyectos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvproyectos.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
-            dgvproyectos.Location = new Point(165, 497);
+            dgvproyectos.Location = new Point(1036, 502);
             dgvproyectos.Margin = new Padding(3, 4, 3, 4);
             dgvproyectos.Name = "dgvproyectos";
             dgvproyectos.RowHeadersWidth = 51;
-            dgvproyectos.Size = new Size(806, 153);
+            dgvproyectos.Size = new Size(10, 71);
             dgvproyectos.TabIndex = 2;
             // 
             // Column1
