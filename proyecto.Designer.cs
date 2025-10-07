@@ -31,6 +31,7 @@ namespace INICIO
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(proyecto));
             groupBox1 = new GroupBox();
+            cbUsuario = new ComboBox();
             button1 = new Button();
             btnCancelar = new Button();
             btnNuevo = new Button();
@@ -38,7 +39,6 @@ namespace INICIO
             txtff = new TextBox();
             txtfi = new TextBox();
             Txtdescripcion = new TextBox();
-            Txtusuario = new TextBox();
             Txtestado = new TextBox();
             Txtnombrepro = new TextBox();
             Txtidproyecto = new TextBox();
@@ -49,6 +49,7 @@ namespace INICIO
             Label3 = new Label();
             Label2 = new Label();
             Label1 = new Label();
+            Txtusuario = new TextBox();
             dgvproyectos = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
@@ -67,6 +68,7 @@ namespace INICIO
             // groupBox1
             // 
             groupBox1.BackColor = Color.SteelBlue;
+            groupBox1.Controls.Add(cbUsuario);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(btnCancelar);
             groupBox1.Controls.Add(btnNuevo);
@@ -74,7 +76,6 @@ namespace INICIO
             groupBox1.Controls.Add(txtff);
             groupBox1.Controls.Add(txtfi);
             groupBox1.Controls.Add(Txtdescripcion);
-            groupBox1.Controls.Add(Txtusuario);
             groupBox1.Controls.Add(Txtestado);
             groupBox1.Controls.Add(Txtnombrepro);
             groupBox1.Controls.Add(Txtidproyecto);
@@ -94,6 +95,15 @@ namespace INICIO
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Proyecto";
+            groupBox1.Enter += groupBox1_Enter;
+            // 
+            // cbUsuario
+            // 
+            cbUsuario.FormattingEnabled = true;
+            cbUsuario.Location = new Point(305, 114);
+            cbUsuario.Name = "cbUsuario";
+            cbUsuario.Size = new Size(114, 28);
+            cbUsuario.TabIndex = 34;
             // 
             // button1
             // 
@@ -103,7 +113,7 @@ namespace INICIO
             button1.Name = "button1";
             button1.Size = new Size(103, 31);
             button1.TabIndex = 33;
-            button1.Text = "V";
+            button1.Text = "GUARDAR";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -115,8 +125,9 @@ namespace INICIO
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(103, 31);
             btnCancelar.TabIndex = 32;
-            btnCancelar.Text = "CANCELAR";
+            btnCancelar.Text = "SALIR";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnNuevo
             // 
@@ -128,6 +139,7 @@ namespace INICIO
             btnNuevo.TabIndex = 31;
             btnNuevo.Text = "+ NUEVO";
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnLimpiar
             // 
@@ -139,11 +151,12 @@ namespace INICIO
             btnLimpiar.TabIndex = 30;
             btnLimpiar.Text = "LIMPIAR";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // txtff
             // 
             txtff.BackColor = SystemColors.ActiveBorder;
-            txtff.Location = new Point(305, 297);
+            txtff.Location = new Point(305, 259);
             txtff.Margin = new Padding(3, 4, 3, 4);
             txtff.Name = "txtff";
             txtff.Size = new Size(114, 27);
@@ -152,7 +165,7 @@ namespace INICIO
             // txtfi
             // 
             txtfi.BackColor = SystemColors.ActiveBorder;
-            txtfi.Location = new Point(305, 245);
+            txtfi.Location = new Point(305, 211);
             txtfi.Margin = new Padding(3, 4, 3, 4);
             txtfi.Name = "txtfi";
             txtfi.Size = new Size(114, 27);
@@ -161,25 +174,16 @@ namespace INICIO
             // Txtdescripcion
             // 
             Txtdescripcion.BackColor = SystemColors.ActiveBorder;
-            Txtdescripcion.Location = new Point(305, 187);
+            Txtdescripcion.Location = new Point(305, 160);
             Txtdescripcion.Margin = new Padding(3, 4, 3, 4);
             Txtdescripcion.Name = "Txtdescripcion";
             Txtdescripcion.Size = new Size(114, 27);
             Txtdescripcion.TabIndex = 27;
             // 
-            // Txtusuario
-            // 
-            Txtusuario.BackColor = SystemColors.ActiveBorder;
-            Txtusuario.Location = new Point(305, 137);
-            Txtusuario.Margin = new Padding(3, 4, 3, 4);
-            Txtusuario.Name = "Txtusuario";
-            Txtusuario.Size = new Size(114, 27);
-            Txtusuario.TabIndex = 26;
-            // 
             // Txtestado
             // 
             Txtestado.BackColor = SystemColors.ActiveBorder;
-            Txtestado.Location = new Point(305, 99);
+            Txtestado.Location = new Point(305, 310);
             Txtestado.Margin = new Padding(3, 4, 3, 4);
             Txtestado.Name = "Txtestado";
             Txtestado.Size = new Size(114, 27);
@@ -188,7 +192,7 @@ namespace INICIO
             // Txtnombrepro
             // 
             Txtnombrepro.BackColor = SystemColors.ActiveBorder;
-            Txtnombrepro.Location = new Point(305, 52);
+            Txtnombrepro.Location = new Point(305, 62);
             Txtnombrepro.Margin = new Padding(3, 4, 3, 4);
             Txtnombrepro.Name = "Txtnombrepro";
             Txtnombrepro.Size = new Size(114, 27);
@@ -197,7 +201,7 @@ namespace INICIO
             // Txtidproyecto
             // 
             Txtidproyecto.BackColor = SystemColors.ActiveBorder;
-            Txtidproyecto.Location = new Point(305, 9);
+            Txtidproyecto.Location = new Point(305, 19);
             Txtidproyecto.Margin = new Padding(3, 4, 3, 4);
             Txtidproyecto.Name = "Txtidproyecto";
             Txtidproyecto.Size = new Size(114, 27);
@@ -208,7 +212,7 @@ namespace INICIO
             Label7.AutoSize = true;
             Label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
             Label7.ForeColor = Color.White;
-            Label7.Location = new Point(136, 299);
+            Label7.Location = new Point(128, 263);
             Label7.Name = "Label7";
             Label7.Size = new Size(91, 23);
             Label7.TabIndex = 21;
@@ -219,7 +223,7 @@ namespace INICIO
             Label6.AutoSize = true;
             Label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
             Label6.ForeColor = Color.White;
-            Label6.Location = new Point(130, 245);
+            Label6.Location = new Point(128, 215);
             Label6.Name = "Label6";
             Label6.Size = new Size(122, 23);
             Label6.TabIndex = 20;
@@ -230,7 +234,7 @@ namespace INICIO
             Label5.AutoSize = true;
             Label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
             Label5.ForeColor = Color.White;
-            Label5.Location = new Point(131, 197);
+            Label5.Location = new Point(128, 162);
             Label5.Name = "Label5";
             Label5.Size = new Size(116, 23);
             Label5.TabIndex = 19;
@@ -241,7 +245,7 @@ namespace INICIO
             Label4.AutoSize = true;
             Label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
             Label4.ForeColor = Color.White;
-            Label4.Location = new Point(130, 153);
+            Label4.Location = new Point(128, 119);
             Label4.Name = "Label4";
             Label4.Size = new Size(81, 23);
             Label4.TabIndex = 18;
@@ -252,7 +256,7 @@ namespace INICIO
             Label3.AutoSize = true;
             Label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
             Label3.ForeColor = Color.White;
-            Label3.Location = new Point(128, 109);
+            Label3.Location = new Point(127, 314);
             Label3.Name = "Label3";
             Label3.Size = new Size(71, 23);
             Label3.TabIndex = 17;
@@ -263,7 +267,7 @@ namespace INICIO
             Label2.AutoSize = true;
             Label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
             Label2.ForeColor = Color.White;
-            Label2.Location = new Point(128, 63);
+            Label2.Location = new Point(128, 73);
             Label2.Name = "Label2";
             Label2.Size = new Size(166, 23);
             Label2.TabIndex = 16;
@@ -274,11 +278,21 @@ namespace INICIO
             Label1.AutoSize = true;
             Label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
             Label1.ForeColor = Color.White;
-            Label1.Location = new Point(127, 20);
+            Label1.Location = new Point(127, 30);
             Label1.Name = "Label1";
             Label1.Size = new Size(115, 23);
             Label1.TabIndex = 15;
             Label1.Text = "ID PROYECTO";
+            // 
+            // Txtusuario
+            // 
+            Txtusuario.BackColor = SystemColors.ActiveBorder;
+            Txtusuario.BorderStyle = BorderStyle.None;
+            Txtusuario.Location = new Point(474, 483);
+            Txtusuario.Margin = new Padding(3, 4, 3, 4);
+            Txtusuario.Name = "Txtusuario";
+            Txtusuario.Size = new Size(114, 20);
+            Txtusuario.TabIndex = 26;
             // 
             // dgvproyectos
             // 
@@ -363,6 +377,7 @@ namespace INICIO
             Controls.Add(panel1);
             Controls.Add(dgvproyectos);
             Controls.Add(groupBox1);
+            Controls.Add(Txtusuario);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "proyecto";
@@ -375,6 +390,7 @@ namespace INICIO
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
 
@@ -411,5 +427,6 @@ namespace INICIO
         private Button btnNuevo;
         private Button btnLimpiar;
         private Button button1;
+        private ComboBox cbUsuario;
     }
 }
