@@ -30,18 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Procesos));
             groupBox1 = new GroupBox();
+            cbUsuario = new ComboBox();
             btnCancelar = new Button();
             btnNuevo = new Button();
             btnLimpiar = new Button();
             btnGuardar = new Button();
-            TextBox4 = new TextBox();
-            TextBox3 = new TextBox();
-            TextBox2 = new TextBox();
-            TextBox1 = new TextBox();
+            txtdescr = new TextBox();
+            txtNomb = new TextBox();
+            txtIdPro = new TextBox();
             Label4 = new Label();
             Label3 = new Label();
             Label2 = new Label();
             Label1 = new Label();
+            TextBox4 = new TextBox();
             DataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
@@ -58,14 +59,14 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.SteelBlue;
+            groupBox1.Controls.Add(cbUsuario);
             groupBox1.Controls.Add(btnCancelar);
             groupBox1.Controls.Add(btnNuevo);
             groupBox1.Controls.Add(btnLimpiar);
             groupBox1.Controls.Add(btnGuardar);
-            groupBox1.Controls.Add(TextBox4);
-            groupBox1.Controls.Add(TextBox3);
-            groupBox1.Controls.Add(TextBox2);
-            groupBox1.Controls.Add(TextBox1);
+            groupBox1.Controls.Add(txtdescr);
+            groupBox1.Controls.Add(txtNomb);
+            groupBox1.Controls.Add(txtIdPro);
             groupBox1.Controls.Add(Label4);
             groupBox1.Controls.Add(Label3);
             groupBox1.Controls.Add(Label2);
@@ -81,6 +82,14 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Procesos";
             // 
+            // cbUsuario
+            // 
+            cbUsuario.FormattingEnabled = true;
+            cbUsuario.Location = new Point(266, 181);
+            cbUsuario.Name = "cbUsuario";
+            cbUsuario.Size = new Size(114, 31);
+            cbUsuario.TabIndex = 26;
+            // 
             // btnCancelar
             // 
             btnCancelar.ForeColor = Color.CadetBlue;
@@ -89,8 +98,9 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(103, 31);
             btnCancelar.TabIndex = 25;
-            btnCancelar.Text = "CANCELAR";
+            btnCancelar.Text = "SALIR";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnNuevo
             // 
@@ -102,6 +112,7 @@
             btnNuevo.TabIndex = 24;
             btnNuevo.Text = "+ NUEVO";
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnLimpiar
             // 
@@ -113,6 +124,7 @@
             btnLimpiar.TabIndex = 23;
             btnLimpiar.Text = "LIMPIAR";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnGuardar
             // 
@@ -124,39 +136,32 @@
             btnGuardar.TabIndex = 22;
             btnGuardar.Text = "GUARDAR";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
-            // TextBox4
+            // txtdescr
             // 
-            TextBox4.Location = new Point(266, 185);
-            TextBox4.Margin = new Padding(3, 4, 3, 4);
-            TextBox4.Name = "TextBox4";
-            TextBox4.Size = new Size(114, 30);
-            TextBox4.TabIndex = 16;
+            txtdescr.Location = new Point(266, 128);
+            txtdescr.Margin = new Padding(3, 4, 3, 4);
+            txtdescr.Name = "txtdescr";
+            txtdescr.Size = new Size(114, 30);
+            txtdescr.TabIndex = 15;
             // 
-            // TextBox3
+            // txtNomb
             // 
-            TextBox3.Location = new Point(266, 128);
-            TextBox3.Margin = new Padding(3, 4, 3, 4);
-            TextBox3.Name = "TextBox3";
-            TextBox3.Size = new Size(114, 30);
-            TextBox3.TabIndex = 15;
+            txtNomb.Location = new Point(266, 79);
+            txtNomb.Margin = new Padding(3, 4, 3, 4);
+            txtNomb.Name = "txtNomb";
+            txtNomb.Size = new Size(114, 30);
+            txtNomb.TabIndex = 14;
             // 
-            // TextBox2
+            // txtIdPro
             // 
-            TextBox2.Location = new Point(266, 79);
-            TextBox2.Margin = new Padding(3, 4, 3, 4);
-            TextBox2.Name = "TextBox2";
-            TextBox2.Size = new Size(114, 30);
-            TextBox2.TabIndex = 14;
-            // 
-            // TextBox1
-            // 
-            TextBox1.BackColor = SystemColors.ControlLight;
-            TextBox1.Location = new Point(266, 31);
-            TextBox1.Margin = new Padding(3, 4, 3, 4);
-            TextBox1.Name = "TextBox1";
-            TextBox1.Size = new Size(114, 30);
-            TextBox1.TabIndex = 13;
+            txtIdPro.BackColor = SystemColors.ControlLight;
+            txtIdPro.Location = new Point(266, 31);
+            txtIdPro.Margin = new Padding(3, 4, 3, 4);
+            txtIdPro.Name = "txtIdPro";
+            txtIdPro.Size = new Size(114, 30);
+            txtIdPro.TabIndex = 13;
             // 
             // Label4
             // 
@@ -193,6 +198,16 @@
             Label1.Size = new Size(105, 23);
             Label1.TabIndex = 9;
             Label1.Text = "ID PROCESO";
+            // 
+            // TextBox4
+            // 
+            TextBox4.BackColor = SystemColors.ActiveBorder;
+            TextBox4.BorderStyle = BorderStyle.None;
+            TextBox4.Location = new Point(115, 289);
+            TextBox4.Margin = new Padding(3, 4, 3, 4);
+            TextBox4.Name = "TextBox4";
+            TextBox4.Size = new Size(114, 20);
+            TextBox4.TabIndex = 16;
             // 
             // DataGridView1
             // 
@@ -263,6 +278,7 @@
             Controls.Add(panel1);
             Controls.Add(DataGridView1);
             Controls.Add(groupBox1);
+            Controls.Add(TextBox4);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "Procesos";
@@ -275,15 +291,16 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private GroupBox groupBox1;
         internal TextBox TextBox4;
-        internal TextBox TextBox3;
-        internal TextBox TextBox2;
-        internal TextBox TextBox1;
+        internal TextBox txtdescr;
+        internal TextBox txtNomb;
+        internal TextBox txtIdPro;
         internal Label Label4;
         internal Label Label3;
         internal Label Label2;
@@ -299,5 +316,6 @@
         private Button btnNuevo;
         private Button btnLimpiar;
         private Button btnGuardar;
+        private ComboBox cbUsuario;
     }
 }
