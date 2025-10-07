@@ -29,27 +29,26 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            txtidservicio = new TextBox();
             txtnombreser = new ComboBox();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            txtprec = new NumericUpDown();
+            btneditar = new Button();
+            btneliminar = new Button();
+            btnguardar = new Button();
             txtdesc = new TextBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)txtprec).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.CornflowerBlue;
+            groupBox1.Controls.Add(txtidservicio);
             groupBox1.Controls.Add(txtnombreser);
-            groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(txtprec);
+            groupBox1.Controls.Add(btneditar);
+            groupBox1.Controls.Add(btneliminar);
+            groupBox1.Controls.Add(btnguardar);
             groupBox1.Controls.Add(txtdesc);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
@@ -65,72 +64,72 @@
             groupBox1.Text = "Seccion de servicios";
             groupBox1.Enter += groupBox1_Enter;
             // 
+            // txtidservicio
+            // 
+            txtidservicio.Location = new Point(187, 97);
+            txtidservicio.Name = "txtidservicio";
+            txtidservicio.Size = new Size(169, 25);
+            txtidservicio.TabIndex = 34;
+            // 
             // txtnombreser
             // 
             txtnombreser.FormattingEnabled = true;
             txtnombreser.Items.AddRange(new object[] { "Mantenimiento Industrial ", "Diseño de soluciones mecánicas personalizadas", "Reparación de maquinaria agrícola ", "Servicios técnicos especializados" });
-            txtnombreser.Location = new Point(187, 94);
+            txtnombreser.Location = new Point(180, 145);
             txtnombreser.Margin = new Padding(3, 2, 3, 2);
             txtnombreser.Name = "txtnombreser";
             txtnombreser.Size = new Size(299, 25);
             txtnombreser.TabIndex = 33;
             txtnombreser.SelectedIndexChanged += txtnombredelservicio_SelectedIndexChanged;
             // 
-            // button3
+            // btneditar
             // 
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseOverBackColor = SystemColors.ActiveBorder;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(331, 293);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 32;
-            button3.Text = "Editar";
-            button3.UseVisualStyleBackColor = true;
+            btneditar.FlatAppearance.BorderSize = 0;
+            btneditar.FlatAppearance.MouseOverBackColor = SystemColors.ActiveBorder;
+            btneditar.FlatStyle = FlatStyle.Flat;
+            btneditar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btneditar.ForeColor = Color.White;
+            btneditar.Location = new Point(331, 293);
+            btneditar.Name = "btneditar";
+            btneditar.Size = new Size(75, 23);
+            btneditar.TabIndex = 32;
+            btneditar.Text = "Limpiar";
+            btneditar.UseVisualStyleBackColor = true;
+            btneditar.Click += btneditar_Click;
             // 
-            // button2
+            // btneliminar
             // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseOverBackColor = SystemColors.ActiveBorder;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(219, 293);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 31;
-            button2.Text = "Eliminar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btneliminar.FlatAppearance.BorderSize = 0;
+            btneliminar.FlatAppearance.MouseOverBackColor = SystemColors.ActiveBorder;
+            btneliminar.FlatStyle = FlatStyle.Flat;
+            btneliminar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btneliminar.ForeColor = Color.White;
+            btneliminar.Location = new Point(219, 293);
+            btneliminar.Name = "btneliminar";
+            btneliminar.Size = new Size(75, 23);
+            btneliminar.TabIndex = 31;
+            btneliminar.Text = "Salir";
+            btneliminar.UseVisualStyleBackColor = true;
+            btneliminar.Click += button2_Click;
             // 
-            // button1
+            // btnguardar
             // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseOverBackColor = SystemColors.ActiveBorder;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(112, 293);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 30;
-            button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // txtprec
-            // 
-            txtprec.Location = new Point(196, 203);
-            txtprec.Margin = new Padding(3, 2, 3, 2);
-            txtprec.Name = "txtprec";
-            txtprec.Size = new Size(78, 25);
-            txtprec.TabIndex = 29;
-            txtprec.ValueChanged += numericUpDown1_ValueChanged;
+            btnguardar.FlatAppearance.BorderSize = 0;
+            btnguardar.FlatAppearance.MouseOverBackColor = SystemColors.ActiveBorder;
+            btnguardar.FlatStyle = FlatStyle.Flat;
+            btnguardar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnguardar.ForeColor = Color.White;
+            btnguardar.Location = new Point(112, 293);
+            btnguardar.Name = "btnguardar";
+            btnguardar.Size = new Size(75, 23);
+            btnguardar.TabIndex = 30;
+            btnguardar.Text = "Guardar";
+            btnguardar.UseVisualStyleBackColor = true;
+            btnguardar.Click += button1_Click;
             // 
             // txtdesc
             // 
-            txtdesc.Location = new Point(187, 144);
+            txtdesc.Location = new Point(187, 205);
             txtdesc.Name = "txtdesc";
             txtdesc.Size = new Size(169, 25);
             txtdesc.TabIndex = 28;
@@ -141,18 +140,18 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(46, 205);
+            label4.Location = new Point(68, 100);
             label4.Name = "label4";
-            label4.Size = new Size(42, 17);
+            label4.Size = new Size(63, 17);
             label4.TabIndex = 26;
-            label4.Text = "Precio";
+            label4.Text = "Id servicio";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(46, 147);
+            label3.Location = new Point(68, 213);
             label3.Name = "label3";
             label3.Size = new Size(72, 17);
             label3.TabIndex = 25;
@@ -163,7 +162,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(46, 94);
+            label2.Location = new Point(55, 148);
             label2.Name = "label2";
             label2.Size = new Size(119, 17);
             label2.TabIndex = 24;
@@ -178,26 +177,24 @@
             Controls.Add(groupBox1);
             Name = "servicios";
             Text = "servicios";
-            Load += servicios_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)txtprec).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private GroupBox groupBox1;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button btneditar;
+        private Button btneliminar;
+        private Button btnguardar;
         private NumericUpDown txtprecio;
         private TextBox txtdesc;
         private Label label4;
         private Label label3;
         private Label label2;
         private ComboBox txtnombredelservicio;
-        private NumericUpDown txtprec;
         private ComboBox txtnombreser;
+        private TextBox txtidservicio;
     }
 }
