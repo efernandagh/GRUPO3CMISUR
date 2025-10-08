@@ -29,30 +29,25 @@
         private void InitializeComponent()
         {
             GroupBox1 = new GroupBox();
+            cmbnombrerol = new ComboBox();
             btncancelar = new Button();
             btneliminar = new Button();
             txtdescrip = new TextBox();
-            txtnombrerol = new TextBox();
             txtidrol = new TextBox();
             btnguardar = new Button();
             Label3 = new Label();
             Label2 = new Label();
             Label1 = new Label();
-            DataGridView1 = new DataGridView();
-            Nombre = new DataGridViewTextBoxColumn();
-            Apellido = new DataGridViewTextBoxColumn();
-            Descripcion = new DataGridViewTextBoxColumn();
             GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DataGridView1).BeginInit();
             SuspendLayout();
             // 
             // GroupBox1
             // 
             GroupBox1.BackColor = Color.CornflowerBlue;
+            GroupBox1.Controls.Add(cmbnombrerol);
             GroupBox1.Controls.Add(btncancelar);
             GroupBox1.Controls.Add(btneliminar);
             GroupBox1.Controls.Add(txtdescrip);
-            GroupBox1.Controls.Add(txtnombrerol);
             GroupBox1.Controls.Add(txtidrol);
             GroupBox1.Controls.Add(btnguardar);
             GroupBox1.Controls.Add(Label3);
@@ -67,6 +62,14 @@
             GroupBox1.TabStop = false;
             GroupBox1.Text = "Roles";
             // 
+            // cmbnombrerol
+            // 
+            cmbnombrerol.FormattingEnabled = true;
+            cmbnombrerol.Location = new Point(133, 88);
+            cmbnombrerol.Name = "cmbnombrerol";
+            cmbnombrerol.Size = new Size(121, 25);
+            cmbnombrerol.TabIndex = 11;
+            // 
             // btncancelar
             // 
             btncancelar.BackColor = SystemColors.ActiveBorder;
@@ -79,7 +82,7 @@
             btncancelar.Name = "btncancelar";
             btncancelar.Size = new Size(71, 23);
             btncancelar.TabIndex = 10;
-            btncancelar.Text = "Cancelar";
+            btncancelar.Text = "Salir";
             btncancelar.UseVisualStyleBackColor = false;
             btncancelar.Click += btncancelar_Click;
             // 
@@ -91,7 +94,7 @@
             btneliminar.FlatStyle = FlatStyle.Flat;
             btneliminar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btneliminar.ForeColor = Color.White;
-            btneliminar.Location = new Point(127, 223);
+            btneliminar.Location = new Point(116, 223);
             btneliminar.Name = "btneliminar";
             btneliminar.Size = new Size(71, 23);
             btneliminar.TabIndex = 9;
@@ -106,14 +109,6 @@
             txtdescrip.Name = "txtdescrip";
             txtdescrip.Size = new Size(100, 25);
             txtdescrip.TabIndex = 8;
-            // 
-            // txtnombrerol
-            // 
-            txtnombrerol.BackColor = SystemColors.ActiveBorder;
-            txtnombrerol.Location = new Point(127, 78);
-            txtnombrerol.Name = "txtnombrerol";
-            txtnombrerol.Size = new Size(100, 25);
-            txtnombrerol.TabIndex = 7;
             // 
             // txtidrol
             // 
@@ -172,38 +167,12 @@
             Label1.TabIndex = 0;
             Label1.Text = "Id rol:";
             // 
-            // DataGridView1
-            // 
-            DataGridView1.AllowUserToOrderColumns = true;
-            DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, Apellido, Descripcion });
-            DataGridView1.Location = new Point(252, 325);
-            DataGridView1.Name = "DataGridView1";
-            DataGridView1.Size = new Size(344, 74);
-            DataGridView1.TabIndex = 14;
-            // 
-            // Nombre
-            // 
-            Nombre.HeaderText = "ID ROL";
-            Nombre.Name = "Nombre";
-            // 
-            // Apellido
-            // 
-            Apellido.HeaderText = "NOMBRE ROL";
-            Apellido.Name = "Apellido";
-            // 
-            // Descripcion
-            // 
-            Descripcion.HeaderText = "DESCRIPCION";
-            Descripcion.Name = "Descripcion";
-            // 
             // roles
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(800, 450);
-            Controls.Add(DataGridView1);
             Controls.Add(GroupBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "roles";
@@ -211,7 +180,6 @@
             Load += roles_Load;
             GroupBox1.ResumeLayout(false);
             GroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)DataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -219,17 +187,13 @@
 
         internal GroupBox GroupBox1;
         internal TextBox txtdescrip;
-        internal TextBox txtnombrerol;
         internal TextBox txtidrol;
         internal Button btnguardar;
         internal Label Label3;
         internal Label Label2;
         internal Label Label1;
-        internal DataGridView DataGridView1;
-        internal DataGridViewTextBoxColumn Nombre;
-        internal DataGridViewTextBoxColumn Apellido;
-        internal DataGridViewTextBoxColumn Descripcion;
         internal Button btncancelar;
         internal Button btneliminar;
+        private ComboBox cmbnombrerol;
     }
 }

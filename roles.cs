@@ -29,14 +29,19 @@ namespace INICIO
 
         private void roles_Load(object sender, EventArgs e)
         {
-
+            cmbnombrerol.Items.Clear();
+            cmbnombrerol.Items.Add("Administrador");
+            cmbnombrerol.Items.Add("Empleado");
+            cmbnombrerol.Items.Add("Gerente");
+            cmbnombrerol.Items.Add("Supervisor");
+            cmbnombrerol.Items.Add("Invitado");
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
 
             string id = txtidrol.Text;
-            string nombre = txtnombrerol.Text;
+            string nombre = cmbnombrerol.Text.Trim();
             string descripcion = txtdescrip.Text;
 
             // Validar campos vacíos
@@ -68,7 +73,7 @@ namespace INICIO
 
             
             txtidrol.Clear();
-            txtnombrerol.Clear();
+            cmbnombrerol.Text ="";
             txtdescrip.Clear();
             txtdescrip.Focus();
         }
@@ -108,7 +113,7 @@ namespace INICIO
 
            
             txtidrol.Clear();
-            txtnombrerol.Clear();
+            cmbnombrerol.Text="";
             txtdescrip.Clear();
             txtdescrip.Focus();
         }
@@ -117,12 +122,14 @@ namespace INICIO
         
 
         private void btncancelar_Click(object sender, EventArgs e)
-        {
-            // Limpiar todos los campos
-            txtidrol.Clear();
-            txtnombrerol.Clear();
-            txtdescrip.Clear();
-            txtidrol.Focus();
+        {// Preguntar si está seguro de salir
+            DialogResult resultado = MessageBox.Show("¿Está seguro que desea salir?",
+                "Confirmar salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

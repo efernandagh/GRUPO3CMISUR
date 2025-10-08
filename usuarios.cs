@@ -26,61 +26,61 @@ namespace INICIO
             InitializeComponent();
         }
 
+
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string id = txtidusuario.Text;
-            string nombre = txtnombreusuario.Text;
-            string apellido = txtapellidousuarios.Text;
-            string correo = txtcorreousuario.Text;
-            string clave = txtclaveusuario.Text;
-            string rol = txtrolusuario.Text;
+            string id = txtidusuario.Text.Trim();
+            string nombre = txtnombreusuario.Text.Trim();
+            string apellido = txtapellidousuarios.Text.Trim();
+            string correo = txtCorreo.Text.Trim();
+            string clave = txtClave.Text.Trim();
             DateTime fecha = dtpfecha.Value;
 
-            // Validar
-            if (string.IsNullOrWhiteSpace(id) ||
-                string.IsNullOrWhiteSpace(nombre) ||
-                string.IsNullOrWhiteSpace(apellido) ||
-                string.IsNullOrWhiteSpace(correo) ||
-                string.IsNullOrWhiteSpace(clave) ||
-                string.IsNullOrWhiteSpace(rol))
+            if (cmbrol.SelectedIndex == -1)
             {
-                MessageBox.Show("⚠️ Por favor, completa todos los campos.",
-                                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecciona un rol para el usuario.");
                 return;
             }
-            using (SqlConnection conn = new SqlConnection(conexion))
+
+            int idRol = Convert.ToInt32(cmbrol.SelectedValue);
+
+            // Validar campos vacíos
+            if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(nombre) ||
+                string.IsNullOrWhiteSpace(apellido) || string.IsNullOrWhiteSpace(correo) ||
+                string.IsNullOrWhiteSpace(clave))
             {
-                try
+                MessageBox.Show("Por favor, completa todos los campos.");
+                return;
+            }
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(conexion))
                 {
-                    conn.Open();
-
-                    string query = "INSERT INTO USUARIOS (ID_USUARIO,NOMBRE, APELLIDO, CORREO, CLAVE, ID_ROL, FECHA_REGISTRO) " +
-                                   "VALUES (@id,   @nombre, @apellido, @correo, @clave, @rol, @fecha)";
-
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txtidusuario.Text));
-                    cmd.Parameters.AddWithValue("@nombre", txtnombreusuario.Text);
-                    cmd.Parameters.AddWithValue("@apellido", txtapellidousuarios.Text);
-                    cmd.Parameters.AddWithValue("@correo", txtcorreousuario.Text);
-                    cmd.Parameters.AddWithValue("@clave", txtclaveusuario.Text);
-                    cmd.Parameters.AddWithValue("@rol", Convert.ToInt32(txtrolusuario.Text));
-                    cmd.Parameters.AddWithValue("@fecha", dtpfecha.Value.Date);
+                    con.Open();
+                    string query = "INSERT INTO USUARIOS (ID_USUARIO, NOMBRE, APELLIDO, CORREO, CLAVE, ID_ROL, FECHA_REGISTRO) " +
+                                   "VALUES (@Id, @Nombre, @Apellido, @Correo, @Clave, @Rol, @Fecha)";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.Parameters.AddWithValue("@Nombre", nombre);
+                    cmd.Parameters.AddWithValue("@Apellido", apellido);
+                    cmd.Parameters.AddWithValue("@Correo", correo);
+                    cmd.Parameters.AddWithValue("@Clave", clave);
+                    cmd.Parameters.AddWithValue("@Rol", idRol);
+                    cmd.Parameters.AddWithValue("@Fecha", fecha);
 
                     cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("✅ Usuario guardado correctamente.",
-                                    "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    LimpiarCampos();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("❌ Error al guardar: " + ex.Message);
+                    MessageBox.Show("✅ Usuario guardado correctamente en SQL.");
                 }
             }
-        }
-        // Mostrar mensaje
+            catch (Exception ex)
+            {
+                MessageBox.Show("❌ Error al guardar: " + ex.Message);
+            }
 
+            LimpiarCampos();
+        }
 
 
         private void btneliminar_Click(object sender, EventArgs e)
@@ -112,7 +112,7 @@ namespace INICIO
             txtapellidousuarios.Clear();
             txtcorreousuario.Clear();
             txtclaveusuario.Clear();
-            txtrolusuario.Clear();
+            cmbrol.Text="";
             dtpfecha.Value = DateTime.Now;
         }
 
@@ -129,7 +129,31 @@ namespace INICIO
 
         private void usuarios_Load(object sender, EventArgs e)
         {
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                try
+                {
+                    con.Open();
+                    string query = "SELECT ID_ROL, NOMBRE_ROL FROM ROL";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    SqlDataReader dr = cmd.ExecuteReader();
 
+                    DataTable dt = new DataTable();
+                    dt.Load(dr);
+
+                    cmbrol.DataSource = dt;
+                    cmbrol.DisplayMember = "NOMBRE_ROL"; // Mostrar
+                    cmbrol.ValueMember = "ID_ROL";       // Valor real
+                    cmbrol.SelectedIndex = -1;           // Ninguno seleccionado al inicio
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("❌ Error al cargar roles: " + ex.Message);
+                }
+            }
+
+            // Establecer fecha actual por defecto
+            dtpfecha.Value = DateTime.Now;
         }
     }
 }

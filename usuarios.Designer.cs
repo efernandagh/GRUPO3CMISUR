@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            cmbrol = new ComboBox();
             txtidusuario = new TextBox();
             label1 = new Label();
             btncancelar = new Button();
@@ -44,7 +45,6 @@
             dtpfecha = new DateTimePicker();
             txtnombreusuario = new TextBox();
             txtapellidousuarios = new TextBox();
-            txtrolusuario = new TextBox();
             txtclaveusuario = new TextBox();
             txtcorreousuario = new TextBox();
             panel1.SuspendLayout();
@@ -53,6 +53,7 @@
             // panel1
             // 
             panel1.BackColor = Color.CornflowerBlue;
+            panel1.Controls.Add(cmbrol);
             panel1.Controls.Add(txtidusuario);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btncancelar);
@@ -68,7 +69,6 @@
             panel1.Controls.Add(dtpfecha);
             panel1.Controls.Add(txtnombreusuario);
             panel1.Controls.Add(txtapellidousuarios);
-            panel1.Controls.Add(txtrolusuario);
             panel1.Controls.Add(txtclaveusuario);
             panel1.Controls.Add(txtcorreousuario);
             panel1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -78,6 +78,14 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(335, 336);
             panel1.TabIndex = 7;
+            // 
+            // cmbrol
+            // 
+            cmbrol.FormattingEnabled = true;
+            cmbrol.Location = new Point(161, 211);
+            cmbrol.Name = "cmbrol";
+            cmbrol.Size = new Size(125, 25);
+            cmbrol.TabIndex = 17;
             // 
             // txtidusuario
             // 
@@ -227,10 +235,11 @@
             // 
             // dtpfecha
             // 
-            dtpfecha.Location = new Point(86, 242);
+            dtpfecha.Format = DateTimePickerFormat.Short;
+            dtpfecha.Location = new Point(161, 248);
             dtpfecha.Margin = new Padding(3, 2, 3, 2);
             dtpfecha.Name = "dtpfecha";
-            dtpfecha.Size = new Size(233, 25);
+            dtpfecha.Size = new Size(95, 25);
             dtpfecha.TabIndex = 5;
             // 
             // txtnombreusuario
@@ -251,15 +260,6 @@
             txtapellidousuarios.Name = "txtapellidousuarios";
             txtapellidousuarios.Size = new Size(125, 25);
             txtapellidousuarios.TabIndex = 3;
-            // 
-            // txtrolusuario
-            // 
-            txtrolusuario.BackColor = SystemColors.ActiveBorder;
-            txtrolusuario.Location = new Point(161, 206);
-            txtrolusuario.Margin = new Padding(3, 2, 3, 2);
-            txtrolusuario.Name = "txtrolusuario";
-            txtrolusuario.Size = new Size(125, 25);
-            txtrolusuario.TabIndex = 1;
             // 
             // txtclaveusuario
             // 
@@ -309,12 +309,12 @@
         private DateTimePicker dtpfecha;
         private TextBox txtnombreusuario;
         private TextBox txtapellidousuarios;
-        private TextBox txtrolusuario;
         private TextBox txtclaveusuario;
         private TextBox txtcorreousuario;
         private Button btncancelar;
         private Button btneliminar;
         private Label label1;
         private TextBox txtidusuario;
+        private ComboBox cmbrol;
     }
 }
