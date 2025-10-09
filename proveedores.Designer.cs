@@ -38,9 +38,7 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // groupBox2
@@ -57,9 +55,9 @@
             groupBox2.Controls.Add(label1);
             groupBox2.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
             groupBox2.ForeColor = Color.White;
-            groupBox2.Location = new Point(291, 36);
+            groupBox2.Location = new Point(372, 121);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(269, 249);
+            groupBox2.Size = new Size(327, 288);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Seccion de proveedores";
@@ -77,7 +75,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatAppearance.MouseOverBackColor = SystemColors.ActiveBorder;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(131, 205);
+            button1.Location = new Point(56, 234);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 3;
@@ -141,33 +139,23 @@
             label1.TabIndex = 0;
             label1.Text = "Proveedor";
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(302, 291);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(240, 110);
-            dataGridView1.TabIndex = 8;
-            // 
             // proveedores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
+            BackColor = Color.FromArgb(192, 192, 255);
+            ClientSize = new Size(945, 482);
             Controls.Add(groupBox2);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "proveedores";
             Text = "proveedores";
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private GroupBox groupBox2;
-        private DataGridView dataGridView1;
         private TextBox textBox4;
         private TextBox textBox3;
         private TextBox textBox2;

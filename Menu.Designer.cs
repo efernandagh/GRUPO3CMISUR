@@ -95,7 +95,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Calisto MT", 24F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(390, 9);
+            label1.Location = new Point(591, 9);
             label1.Name = "label1";
             label1.Size = new Size(112, 38);
             label1.TabIndex = 0;

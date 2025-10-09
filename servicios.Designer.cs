@@ -56,7 +56,7 @@
             groupBox1.FlatStyle = FlatStyle.Flat;
             groupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(187, 12);
+            groupBox1.Location = new Point(288, 98);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(499, 335);
             groupBox1.TabIndex = 23;
@@ -172,9 +172,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(192, 192, 255);
+            ClientSize = new Size(903, 511);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "servicios";
             Text = "servicios";
             groupBox1.ResumeLayout(false);

@@ -63,7 +63,7 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(234, 45);
+            groupBox1.Location = new Point(367, 133);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(388, 340);
             groupBox1.TabIndex = 2;
@@ -102,6 +102,7 @@
             // 
             // dtpfecharegistro
             // 
+            dtpfecharegistro.Format = DateTimePickerFormat.Short;
             dtpfecharegistro.Location = new Point(160, 229);
             dtpfecharegistro.Name = "dtpfecharegistro";
             dtpfecharegistro.Size = new Size(200, 25);
@@ -185,9 +186,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(192, 192, 255);
+            ClientSize = new Size(899, 555);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "clientes";
             Text = "clientes";
             Load += clientes_Load;

@@ -66,7 +66,7 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(166, 23);
+            panel1.Location = new Point(410, 116);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(523, 341);
@@ -103,6 +103,11 @@
             // 
             // btnGuardar
             // 
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            btnGuardar.ForeColor = Color.White;
             btnGuardar.Location = new Point(408, 280);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(75, 23);
@@ -113,6 +118,11 @@
             // 
             // btnSalir
             // 
+            btnSalir.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            btnSalir.ForeColor = Color.White;
             btnSalir.Location = new Point(408, 233);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(75, 23);
@@ -123,6 +133,11 @@
             // 
             // btnLimpiar
             // 
+            btnLimpiar.FlatAppearance.BorderSize = 0;
+            btnLimpiar.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            btnLimpiar.ForeColor = Color.White;
             btnLimpiar.Location = new Point(408, 191);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(75, 23);
@@ -230,8 +245,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1098, 546);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "facturas";
             Text = "facturas";
             Load += facturas_Load;

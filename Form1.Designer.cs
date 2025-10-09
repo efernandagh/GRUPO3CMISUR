@@ -40,12 +40,12 @@
             btnrestaurar = new Button();
             btnminimizar = new Button();
             button1 = new Button();
-            pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            pictureBox4 = new PictureBox();
             barratitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -133,16 +133,16 @@
             // barratitulo
             // 
             barratitulo.BackColor = Color.SteelBlue;
+            barratitulo.Controls.Add(pictureBox4);
             barratitulo.Controls.Add(btnrestaurar);
             barratitulo.Controls.Add(btnminimizar);
             barratitulo.Controls.Add(button1);
-            barratitulo.Controls.Add(pictureBox2);
             barratitulo.Controls.Add(button2);
             barratitulo.Controls.Add(label1);
             barratitulo.Dock = DockStyle.Top;
             barratitulo.Location = new Point(0, 0);
             barratitulo.Name = "barratitulo";
-            barratitulo.Size = new Size(1300, 57);
+            barratitulo.Size = new Size(1300, 69);
             barratitulo.TabIndex = 13;
             // 
             // btnrestaurar
@@ -199,15 +199,6 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click_2;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(0, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(69, 64);
-            pictureBox2.TabIndex = 15;
-            pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
@@ -225,6 +216,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1300, 58);
             panel2.TabIndex = 15;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(-20, 0);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(118, 70);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 16;
+            pictureBox4.TabStop = false;
             // 
             // Form1
             // 
@@ -249,8 +250,8 @@
             Load += Form1_Load;
             barratitulo.ResumeLayout(false);
             barratitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -266,10 +267,10 @@
         private Button button2;
         private Panel barratitulo;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
         private Button button1;
         private Button btnrestaurar;
         private Button btnminimizar;
         private Panel panel2;
+        private PictureBox pictureBox4;
     }
 }

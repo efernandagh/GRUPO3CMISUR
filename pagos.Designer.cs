@@ -66,7 +66,8 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(163, 28);
+            panel1.ForeColor = Color.White;
+            panel1.Location = new Point(370, 129);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(494, 305);
@@ -75,11 +76,14 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.BackColor = Color.FromArgb(192, 192, 255);
+            btnGuardar.BackColor = Color.CornflowerBlue;
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGuardar.Location = new Point(366, 127);
+            btnGuardar.Location = new Point(366, 142);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(114, 38);
+            btnGuardar.Size = new Size(102, 38);
             btnGuardar.TabIndex = 16;
             btnGuardar.Text = "GUARDAR";
             btnGuardar.UseVisualStyleBackColor = false;
@@ -97,10 +101,12 @@
             // 
             // btnSalir
             // 
-            btnSalir.BackColor = Color.FromArgb(128, 128, 255);
+            btnSalir.BackColor = Color.CornflowerBlue;
+            btnSalir.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSalir.Location = new Point(366, 237);
+            btnSalir.Location = new Point(366, 221);
             btnSalir.Margin = new Padding(3, 2, 3, 2);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(94, 32);
@@ -111,7 +117,9 @@
             // 
             // btnLimpiar
             // 
-            btnLimpiar.BackColor = Color.FromArgb(128, 128, 255);
+            btnLimpiar.BackColor = Color.CornflowerBlue;
+            btnLimpiar.FlatAppearance.BorderSize = 0;
+            btnLimpiar.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
             btnLimpiar.FlatStyle = FlatStyle.Flat;
             btnLimpiar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLimpiar.Location = new Point(366, 185);
@@ -233,8 +241,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(848, 404);
+            ClientSize = new Size(1041, 513);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "frmPagos";
             Text = "pagos";
             Load += pagos_Load;

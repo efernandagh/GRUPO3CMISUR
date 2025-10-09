@@ -90,7 +90,7 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(158, 10);
+            groupBox1.Location = new Point(303, 101);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(443, 402);
             groupBox1.TabIndex = 6;
@@ -211,9 +211,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(192, 192, 255);
+            ClientSize = new Size(924, 541);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "inventario";
             Text = "inventario";
             Load += inventario_Load;

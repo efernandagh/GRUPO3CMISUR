@@ -53,7 +53,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = Color.SteelBlue;
+            groupBox1.BackColor = Color.CornflowerBlue;
             groupBox1.Controls.Add(btnCancelar);
             groupBox1.Controls.Add(btnNuevo);
             groupBox1.Controls.Add(btnLimpiar);
@@ -70,7 +70,7 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(201, 50);
+            groupBox1.Location = new Point(309, 136);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(452, 314);
             groupBox1.TabIndex = 0;
@@ -207,7 +207,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 41);
+            panel1.Size = new Size(879, 41);
             panel1.TabIndex = 22;
             // 
             // pictureBox2
@@ -223,14 +223,15 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(192, 192, 255);
+            ClientSize = new Size(879, 513);
             Controls.Add(panel1);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "contratos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Contratos";
+            Load += contratos_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             panel1.ResumeLayout(false);

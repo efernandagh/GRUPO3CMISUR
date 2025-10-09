@@ -55,17 +55,18 @@
             GroupBox1.Controls.Add(Label1);
             GroupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             GroupBox1.ForeColor = Color.White;
-            GroupBox1.Location = new Point(252, 34);
+            GroupBox1.Location = new Point(420, 182);
             GroupBox1.Name = "GroupBox1";
-            GroupBox1.Size = new Size(330, 275);
+            GroupBox1.Size = new Size(380, 331);
             GroupBox1.TabIndex = 12;
             GroupBox1.TabStop = false;
             GroupBox1.Text = "Roles";
             // 
             // cmbnombrerol
             // 
+            cmbnombrerol.BackColor = SystemColors.ActiveBorder;
             cmbnombrerol.FormattingEnabled = true;
-            cmbnombrerol.Location = new Point(133, 88);
+            cmbnombrerol.Location = new Point(127, 96);
             cmbnombrerol.Name = "cmbnombrerol";
             cmbnombrerol.Size = new Size(121, 25);
             cmbnombrerol.TabIndex = 11;
@@ -78,7 +79,7 @@
             btncancelar.FlatStyle = FlatStyle.Flat;
             btncancelar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btncancelar.ForeColor = Color.White;
-            btncancelar.Location = new Point(226, 223);
+            btncancelar.Location = new Point(262, 272);
             btncancelar.Name = "btncancelar";
             btncancelar.Size = new Size(71, 23);
             btncancelar.TabIndex = 10;
@@ -94,7 +95,7 @@
             btneliminar.FlatStyle = FlatStyle.Flat;
             btneliminar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btneliminar.ForeColor = Color.White;
-            btneliminar.Location = new Point(116, 223);
+            btneliminar.Location = new Point(133, 272);
             btneliminar.Name = "btneliminar";
             btneliminar.Size = new Size(71, 23);
             btneliminar.TabIndex = 9;
@@ -105,7 +106,7 @@
             // txtdescrip
             // 
             txtdescrip.BackColor = SystemColors.ActiveBorder;
-            txtdescrip.Location = new Point(127, 131);
+            txtdescrip.Location = new Point(127, 162);
             txtdescrip.Name = "txtdescrip";
             txtdescrip.Size = new Size(100, 25);
             txtdescrip.TabIndex = 8;
@@ -126,7 +127,7 @@
             btnguardar.FlatStyle = FlatStyle.Flat;
             btnguardar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnguardar.ForeColor = Color.White;
-            btnguardar.Location = new Point(6, 223);
+            btnguardar.Location = new Point(6, 272);
             btnguardar.Name = "btnguardar";
             btnguardar.Size = new Size(80, 23);
             btnguardar.TabIndex = 5;
@@ -139,7 +140,7 @@
             Label3.AutoSize = true;
             Label3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             Label3.ForeColor = Color.White;
-            Label3.Location = new Point(22, 139);
+            Label3.Location = new Point(20, 165);
             Label3.Name = "Label3";
             Label3.Size = new Size(80, 17);
             Label3.TabIndex = 2;
@@ -150,7 +151,7 @@
             Label2.AutoSize = true;
             Label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             Label2.ForeColor = Color.White;
-            Label2.Location = new Point(20, 86);
+            Label2.Location = new Point(20, 96);
             Label2.Name = "Label2";
             Label2.Size = new Size(84, 17);
             Label2.TabIndex = 1;
@@ -171,8 +172,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(192, 192, 255);
+            ClientSize = new Size(904, 556);
             Controls.Add(GroupBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "roles";
