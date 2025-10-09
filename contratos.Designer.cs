@@ -70,11 +70,9 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(230, 67);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Location = new Point(201, 50);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(517, 419);
+            groupBox1.Size = new Size(452, 314);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Contratos";
@@ -82,10 +80,9 @@
             // btnCancelar
             // 
             btnCancelar.ForeColor = Color.CadetBlue;
-            btnCancelar.Location = new Point(379, 353);
-            btnCancelar.Margin = new Padding(3, 4, 3, 4);
+            btnCancelar.Location = new Point(332, 265);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(103, 31);
+            btnCancelar.Size = new Size(90, 23);
             btnCancelar.TabIndex = 29;
             btnCancelar.Text = "CANCELAR";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -93,10 +90,9 @@
             // btnNuevo
             // 
             btnNuevo.ForeColor = Color.CadetBlue;
-            btnNuevo.Location = new Point(52, 353);
-            btnNuevo.Margin = new Padding(3, 4, 3, 4);
+            btnNuevo.Location = new Point(46, 265);
             btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(103, 31);
+            btnNuevo.Size = new Size(90, 23);
             btnNuevo.TabIndex = 28;
             btnNuevo.Text = "+ NUEVO";
             btnNuevo.UseVisualStyleBackColor = true;
@@ -104,10 +100,9 @@
             // btnLimpiar
             // 
             btnLimpiar.ForeColor = Color.CadetBlue;
-            btnLimpiar.Location = new Point(270, 353);
-            btnLimpiar.Margin = new Padding(3, 4, 3, 4);
+            btnLimpiar.Location = new Point(236, 265);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(103, 31);
+            btnLimpiar.Size = new Size(90, 23);
             btnLimpiar.TabIndex = 27;
             btnLimpiar.Text = "LIMPIAR";
             btnLimpiar.UseVisualStyleBackColor = true;
@@ -115,10 +110,9 @@
             // btnGuardar
             // 
             btnGuardar.ForeColor = Color.CadetBlue;
-            btnGuardar.Location = new Point(162, 353);
-            btnGuardar.Margin = new Padding(3, 4, 3, 4);
+            btnGuardar.Location = new Point(142, 265);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(103, 31);
+            btnGuardar.Size = new Size(90, 23);
             btnGuardar.TabIndex = 26;
             btnGuardar.Text = "GUARDAR";
             btnGuardar.UseVisualStyleBackColor = true;
@@ -126,86 +120,83 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(221, 293);
-            comboBox1.Margin = new Padding(3, 4, 3, 4);
+            comboBox1.Location = new Point(193, 220);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(167, 29);
+            comboBox1.Size = new Size(147, 25);
             comboBox1.TabIndex = 20;
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(221, 227);
-            dateTimePicker2.Margin = new Padding(3, 4, 3, 4);
+            dateTimePicker2.Format = DateTimePickerFormat.Short;
+            dateTimePicker2.Location = new Point(193, 170);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(228, 29);
+            dateTimePicker2.Size = new Size(200, 25);
             dateTimePicker2.TabIndex = 19;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(221, 171);
-            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(193, 128);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(228, 29);
+            dateTimePicker1.Size = new Size(200, 25);
             dateTimePicker1.TabIndex = 18;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(221, 116);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
+            textBox2.Location = new Point(193, 87);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(167, 29);
+            textBox2.Size = new Size(147, 25);
             textBox2.TabIndex = 17;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(221, 57);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Location = new Point(193, 43);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(167, 29);
+            textBox1.Size = new Size(147, 25);
             textBox1.TabIndex = 16;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(95, 283);
+            label5.Location = new Point(83, 212);
             label5.Name = "label5";
-            label5.Size = new Size(116, 46);
+            label5.Size = new Size(87, 34);
             label5.TabIndex = 15;
             label5.Text = "SELECCIONAR\r\nPROYECTO";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(95, 235);
+            label4.Location = new Point(83, 176);
             label4.Name = "label4";
-            label4.Size = new Size(91, 23);
+            label4.Size = new Size(68, 17);
             label4.TabIndex = 14;
             label4.Text = "FECHA FIN";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(95, 179);
+            label3.Location = new Point(83, 134);
             label3.Name = "label3";
-            label3.Size = new Size(117, 23);
+            label3.Size = new Size(86, 17);
             label3.TabIndex = 13;
             label3.Text = "FECHA INICIO";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(95, 120);
+            label2.Location = new Point(83, 90);
             label2.Name = "label2";
-            label2.Size = new Size(85, 23);
+            label2.Size = new Size(63, 17);
             label2.TabIndex = 12;
             label2.Text = "APELLIDO";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(95, 68);
+            label1.Location = new Point(83, 51);
             label1.Name = "label1";
-            label1.Size = new Size(78, 23);
+            label1.Size = new Size(60, 17);
             label1.TabIndex = 11;
             label1.Text = "NOMBRE";
             // 
@@ -215,31 +206,28 @@
             panel1.Controls.Add(pictureBox2);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(914, 55);
+            panel1.Size = new Size(800, 41);
             panel1.TabIndex = 22;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(0, 0);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(74, 61);
+            pictureBox2.Size = new Size(65, 46);
             pictureBox2.TabIndex = 19;
             pictureBox2.TabStop = false;
             // 
             // contratos
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
             Controls.Add(panel1);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "contratos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Contratos";

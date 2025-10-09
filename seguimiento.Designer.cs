@@ -72,11 +72,9 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(231, 63);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Location = new Point(202, 47);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(465, 379);
+            groupBox1.Size = new Size(407, 284);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Seccion de seguimiento";
@@ -84,36 +82,33 @@
             // 
             // txtNivel
             // 
-            txtNivel.Location = new Point(189, 229);
-            txtNivel.Margin = new Padding(3, 4, 3, 4);
+            txtNivel.Location = new Point(165, 172);
             txtNivel.Name = "txtNivel";
-            txtNivel.Size = new Size(197, 30);
+            txtNivel.Size = new Size(173, 26);
             txtNivel.TabIndex = 24;
             // 
             // txtSeguimiento
             // 
-            txtSeguimiento.Location = new Point(189, 37);
-            txtSeguimiento.Margin = new Padding(3, 4, 3, 4);
+            txtSeguimiento.Location = new Point(165, 28);
             txtSeguimiento.Name = "txtSeguimiento";
-            txtSeguimiento.Size = new Size(197, 30);
+            txtSeguimiento.Size = new Size(173, 26);
             txtSeguimiento.TabIndex = 23;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(41, 40);
+            label5.Location = new Point(36, 30);
             label5.Name = "label5";
-            label5.Size = new Size(139, 23);
+            label5.Size = new Size(116, 19);
             label5.TabIndex = 22;
             label5.Text = "ID SEGUIMIENTO";
             // 
             // btnCancelar
             // 
             btnCancelar.ForeColor = Color.CadetBlue;
-            btnCancelar.Location = new Point(350, 305);
-            btnCancelar.Margin = new Padding(3, 4, 3, 4);
+            btnCancelar.Location = new Point(306, 229);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(103, 31);
+            btnCancelar.Size = new Size(90, 23);
             btnCancelar.TabIndex = 21;
             btnCancelar.Text = "CANCELAR";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -122,10 +117,9 @@
             // btnNuevo
             // 
             btnNuevo.ForeColor = Color.CadetBlue;
-            btnNuevo.Location = new Point(23, 305);
-            btnNuevo.Margin = new Padding(3, 4, 3, 4);
+            btnNuevo.Location = new Point(20, 229);
             btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(103, 31);
+            btnNuevo.Size = new Size(90, 23);
             btnNuevo.TabIndex = 20;
             btnNuevo.Text = "+ NUEVO";
             btnNuevo.UseVisualStyleBackColor = true;
@@ -134,10 +128,9 @@
             // btnLimpiar
             // 
             btnLimpiar.ForeColor = Color.CadetBlue;
-            btnLimpiar.Location = new Point(241, 305);
-            btnLimpiar.Margin = new Padding(3, 4, 3, 4);
+            btnLimpiar.Location = new Point(211, 229);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(103, 31);
+            btnLimpiar.Size = new Size(90, 23);
             btnLimpiar.TabIndex = 19;
             btnLimpiar.Text = "LIMPIAR";
             btnLimpiar.UseVisualStyleBackColor = true;
@@ -145,10 +138,9 @@
             // btnGuardar
             // 
             btnGuardar.ForeColor = Color.CadetBlue;
-            btnGuardar.Location = new Point(133, 305);
-            btnGuardar.Margin = new Padding(3, 4, 3, 4);
+            btnGuardar.Location = new Point(116, 229);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(103, 31);
+            btnGuardar.Size = new Size(90, 23);
             btnGuardar.TabIndex = 18;
             btnGuardar.Text = "GUARDAR";
             btnGuardar.UseVisualStyleBackColor = true;
@@ -156,73 +148,70 @@
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(189, 173);
-            txtDescripcion.Margin = new Padding(3, 4, 3, 4);
+            txtDescripcion.Location = new Point(165, 130);
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(197, 30);
+            txtDescripcion.Size = new Size(173, 26);
             txtDescripcion.TabIndex = 16;
             // 
             // dtpFecha
             // 
-            dtpFecha.Location = new Point(189, 120);
-            dtpFecha.Margin = new Padding(3, 4, 3, 4);
+            dtpFecha.Format = DateTimePickerFormat.Short;
+            dtpFecha.Location = new Point(165, 90);
             dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(228, 30);
+            dtpFecha.Size = new Size(200, 26);
             dtpFecha.TabIndex = 15;
             // 
             // cbContrato
             // 
             cbContrato.FormattingEnabled = true;
-            cbContrato.Location = new Point(189, 78);
-            cbContrato.Margin = new Padding(3, 4, 3, 4);
+            cbContrato.Location = new Point(165, 58);
             cbContrato.Name = "cbContrato";
-            cbContrato.Size = new Size(187, 31);
+            cbContrato.Size = new Size(164, 27);
             cbContrato.TabIndex = 14;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(41, 213);
+            label4.Location = new Point(36, 160);
             label4.Name = "label4";
-            label4.Size = new Size(131, 46);
+            label4.Size = new Size(109, 38);
             label4.TabIndex = 13;
             label4.Text = "NIVEL\r\nSATISFACTORIO";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(41, 176);
+            label3.Location = new Point(36, 132);
             label3.Name = "label3";
-            label3.Size = new Size(116, 23);
+            label3.Size = new Size(97, 19);
             label3.TabIndex = 12;
             label3.Text = "DESCRIPCIÓN";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(41, 113);
+            label2.Location = new Point(36, 85);
             label2.Name = "label2";
-            label2.Size = new Size(117, 46);
+            label2.Size = new Size(98, 38);
             label2.TabIndex = 11;
             label2.Text = "FECHA DE\r\nSEGUIMIENTO";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(41, 82);
+            label1.Location = new Point(36, 62);
             label1.Name = "label1";
-            label1.Size = new Size(121, 23);
+            label1.Size = new Size(100, 19);
             label1.TabIndex = 10;
             label1.Text = "ID CONTRATO";
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(482, 545);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Location = new Point(422, 409);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(354, 144);
+            dataGridView1.Size = new Size(310, 108);
             dataGridView1.TabIndex = 19;
             // 
             // panel1
@@ -231,32 +220,29 @@
             panel1.Controls.Add(pictureBox2);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(914, 55);
+            panel1.Size = new Size(800, 41);
             panel1.TabIndex = 20;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(0, 0);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(74, 61);
+            pictureBox2.Size = new Size(65, 46);
             pictureBox2.TabIndex = 19;
             pictureBox2.TabStop = false;
             // 
             // seguimiento
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(914, 527);
+            ClientSize = new Size(800, 395);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "seguimiento";
             Text = "seguimiento";
             Load += seguimiento_Load;
