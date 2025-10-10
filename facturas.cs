@@ -43,8 +43,7 @@ namespace INICIO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("❌ Error al cargar contratos: " + ex.Message,
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("❌ Error al cargar contratos: " + ex.Message);
             }
 
             // 🔹 Cargar métodos de pago
@@ -53,6 +52,9 @@ namespace INICIO
             cmbMetodoPago.Items.Add("Tarjeta");
             cmbMetodoPago.Items.Add("Transferencia");
             cmbMetodoPago.Items.Add("Depósito");
+
+            dtpFecha.Format = DateTimePickerFormat.Custom;
+            dtpFecha.CustomFormat = "dddd dd 'de' MMMM 'de' yyyy";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -109,53 +111,56 @@ namespace INICIO
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            // Validar campos
-            if (string.IsNullOrWhiteSpace(txtidfactura.Text) ||
-                cboidcontrato.SelectedIndex == -1 ||
-                string.IsNullOrWhiteSpace(txtMontoTotal.Text) ||
-                cmbMetodoPago.SelectedIndex == -1)
+            if (cboidcontrato.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txtMontoTotal.Text) || cmbMetodoPago.SelectedIndex == -1)
             {
-                MessageBox.Show("⚠️ Por favor, completa todos los campos.",
-                                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("⚠️ Por favor, completa todos los campos.", "Advertencia");
                 return;
             }
 
-            // Validar que el monto sea numérico
             if (!decimal.TryParse(txtMontoTotal.Text, out decimal montoDecimal))
             {
-                MessageBox.Show("⚠️ El campo MONTO debe ser un número válido.",
-                                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("⚠️ El monto debe ser un número válido.", "Advertencia");
                 return;
             }
 
-            // Insertar en la base de datos
+            int idGenerado = 0;
+
             using (SqlConnection conn = new SqlConnection(conexion))
             {
                 try
                 {
                     conn.Open();
 
-                    string query = "INSERT INTO FACTURAS (ID_FACTURA, ID_CONTRATO, FECHA_FACTURA, MONTO_TOTAL, METODO_PAGO) " +
-                                   "VALUES (@idfactura, @idcontrato, @fecha, @monto, @metodo)";
+                    string query = @"INSERT INTO FACTURAS (ID_CONTRATO, FECHA_FACTURA, MONTO_TOTAL, METODO_PAGO)
+                                     OUTPUT INSERTED.ID_FACTURA
+                                     VALUES (@idcontrato, @fecha, @monto, @metodo)";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@idfactura", Convert.ToInt32(txtidfactura.Text));
                     cmd.Parameters.AddWithValue("@idcontrato", Convert.ToInt32(cboidcontrato.SelectedItem));
                     cmd.Parameters.AddWithValue("@fecha", dtpFecha.Value);
                     cmd.Parameters.AddWithValue("@monto", montoDecimal);
                     cmd.Parameters.AddWithValue("@metodo", cmbMetodoPago.SelectedItem.ToString());
 
-                    cmd.ExecuteNonQuery();
+                    // 🔹 Obtener el ID autogenerado
+                    idGenerado = (int)cmd.ExecuteScalar();
 
-                    MessageBox.Show("✅ Factura guardada correctamente.",
+                    MessageBox.Show($"✅ Factura guardada correctamente.\n🧾 ID generado: {idGenerado}",
                                     "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    
+                    // 🔹 Preguntar si desea registrar pago
+                    DialogResult result = MessageBox.Show("¿Desea registrar un pago para esta factura?",
+                        "Factura Guardada", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        frmPagos pagosForm = new frmPagos(idGenerado); // 🔹 Enviamos el ID al otro formulario
+                        pagosForm.Show();
+                    }
+
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("❌ Error al guardar: " + ex.Message,
-                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("❌ Error al guardar: " + ex.Message);
                 }
             }
 

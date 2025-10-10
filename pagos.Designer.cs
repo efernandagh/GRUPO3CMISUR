@@ -33,7 +33,6 @@
             cboEstado = new ComboBox();
             btnSalir = new Button();
             btnLimpiar = new Button();
-            txtFactura = new TextBox();
             txtPago = new TextBox();
             label6 = new Label();
             label5 = new Label();
@@ -44,6 +43,7 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
+            cmbidfaactura = new ComboBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -51,11 +51,11 @@
             // panel1
             // 
             panel1.BackColor = Color.CornflowerBlue;
+            panel1.Controls.Add(cmbidfaactura);
             panel1.Controls.Add(btnGuardar);
             panel1.Controls.Add(cboEstado);
             panel1.Controls.Add(btnSalir);
             panel1.Controls.Add(btnLimpiar);
-            panel1.Controls.Add(txtFactura);
             panel1.Controls.Add(txtPago);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label5);
@@ -87,7 +87,7 @@
             btnGuardar.TabIndex = 16;
             btnGuardar.Text = "GUARDAR";
             btnGuardar.UseVisualStyleBackColor = false;
-            btnGuardar.Click += btnGuardar_Click_1;
+            
             // 
             // cboEstado
             // 
@@ -130,14 +130,6 @@
             btnLimpiar.Text = "LIMPIAR";
             btnLimpiar.UseVisualStyleBackColor = false;
             btnLimpiar.Click += btnLimpiar_Click;
-            // 
-            // txtFactura
-            // 
-            txtFactura.Location = new Point(167, 133);
-            txtFactura.Margin = new Padding(3, 2, 3, 2);
-            txtFactura.Name = "txtFactura";
-            txtFactura.Size = new Size(123, 23);
-            txtFactura.TabIndex = 12;
             // 
             // txtPago
             // 
@@ -236,6 +228,14 @@
             label2.TabIndex = 1;
             label2.Text = "FECHA:";
             // 
+            // cmbidfaactura
+            // 
+            cmbidfaactura.FormattingEnabled = true;
+            cmbidfaactura.Location = new Point(162, 146);
+            cmbidfaactura.Name = "cmbidfaactura";
+            cmbidfaactura.Size = new Size(121, 23);
+            cmbidfaactura.TabIndex = 17;
+            // 
             // frmPagos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -262,7 +262,6 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;
-        private TextBox txtFactura;
         private TextBox txtPago;
         private Label label6;
         private Label label5;
@@ -270,5 +269,6 @@
         private Button btnLimpiar;
         private ComboBox cboEstado;
         private Button btnGuardar;
+        private ComboBox cmbidfaactura;
     }
 }

@@ -5,10 +5,16 @@ namespace INICIO
     public partial class frmPagos : Form
     {
         string conexion = "Server=DESKTOP-8QJ2O4S\\ENIAGOMEZ;Database=MECANICA_INDUSTRIAL;Integrated Security=True;TrustServerCertificate=True;";
+        private int idFacturaSeleccionada; // 🔹 Guardará el ID que viene desde facturas
+
+        public frmPagos(int txtidfactura)
+        {
+            InitializeComponent();
+            idFacturaSeleccionada = txtidfactura;
+        }
 
         public frmPagos()
         {
-            InitializeComponent();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -40,7 +46,7 @@ namespace INICIO
         {
             // Limpiar todos los campos
             txtPago.Clear();
-            txtFactura.Clear();
+            cmbidfaactura.SelectedIndex = 0;
             txtMonto.Clear();
             dtpFecha.Value = DateTime.Now;
             cboEstado.SelectedIndex = 0;
@@ -53,22 +59,98 @@ namespace INICIO
 
         private void pagos_Load(object sender, EventArgs e)
         {
-            // Configurar el DateTimePicker
+
             dtpFecha.Format = DateTimePickerFormat.Custom;
             dtpFecha.CustomFormat = "dddd dd 'de' MMMM 'de' yyyy";
 
-            // Llenar el ComboBox de ESTADO
+            // 🔹 Cargar estados
             cboEstado.Items.Clear();
             cboEstado.Items.Add("Pendiente");
             cboEstado.Items.Add("Pagado");
             cboEstado.Items.Add("Cancelado");
             cboEstado.SelectedIndex = 0;
 
-            // Configurar campos de texto
-            txtPago.MaxLength = 10;
-            txtFactura.MaxLength = 20;
-            txtMonto.MaxLength = 15;
+            // 🔹 Cargar facturas en ComboBox
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(conexion))
+                {
+                    conn.Open();
+                    string query = "SELECT ID_FACTURA FROM FACTURAS";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    cmbidfaactura.Items.Clear();
+
+                    while (reader.Read())
+                    {
+                        cmbidfaactura.Items.Add(reader["ID_FACTURA"].ToString());
+                    }
+                    reader.Close();
+                }
+
+                // 🔹 Si el formulario fue abierto desde facturas, seleccionar ese ID
+                if (idFacturaSeleccionada > 0)
+                {
+                    cmbidfaactura.SelectedItem = idFacturaSeleccionada.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("❌ Error al cargar facturas: " + ex.Message);
+            }
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPago.Text) || cmbidfaactura.SelectedIndex == -1 ||
+                string.IsNullOrWhiteSpace(txtMonto.Text) || cboEstado.SelectedIndex == -1)
+            {
+                MessageBox.Show("⚠️ Por favor completa todos los campos.", "Advertencia");
+                return;
+            }
+
+            if (!decimal.TryParse(txtMonto.Text, out decimal monto))
+            {
+                MessageBox.Show("⚠️ El monto debe ser numérico.", "Advertencia");
+                return;
+            }
+
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                try
+                {
+                    conn.Open();
+
+                    string query = "INSERT INTO PAGOS (ID_PAGO, ID_FACTURA, FECHA_PAGO, MONTO_PAGO, ESTADO_PAGO) " +
+                                   "VALUES (@idpago, @idfactura, @fecha, @monto, @estado)";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@idpago", Convert.ToInt32(txtPago.Text));
+                    cmd.Parameters.AddWithValue("@idfactura", Convert.ToInt32(cmbidfaactura.SelectedItem));
+                    cmd.Parameters.AddWithValue("@fecha", dtpFecha.Value);
+                    cmd.Parameters.AddWithValue("@monto", monto);
+                    cmd.Parameters.AddWithValue("@estado", cboEstado.SelectedItem.ToString());
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("✅ Pago guardado correctamente.", "Éxito");
+
+                    // Limpiar
+                    txtPago.Clear();
+                    txtMonto.Clear();
+                    cmbidfaactura.SelectedIndex = -1;
+                    cboEstado.SelectedIndex = 0;
+                    dtpFecha.Value = DateTime.Now;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("❌ Error al guardar: " + ex.Message);
+                }
+            }
+        }
+
+
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -82,96 +164,17 @@ namespace INICIO
             }
         }
 
-        private void btnGuardar_Click_1(object sender, EventArgs e)
-        {
-            string idPago = txtPago.Text.Trim();
-            string idFactura = txtFactura.Text.Trim();
-            string montoTexto = txtMonto.Text.Trim();
-            string estado = cboEstado.Text.Trim();
-            DateTime fecha = dtpFecha.Value;
 
-            // 🔹 Validar campos vacíos
-            if (string.IsNullOrWhiteSpace(idPago))
-            {
-                MessageBox.Show("Por favor ingrese el número de PAGO", "Campo requerido",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtMonto.Focus();
-                return;
-            }
 
-            if (string.IsNullOrWhiteSpace(idFactura))
-            {
-                MessageBox.Show("Por favor ingrese el número de FACTURA", "Campo requerido",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtFactura.Focus();
-                return;
-            }
 
-            if (string.IsNullOrWhiteSpace(montoTexto))
-            {
-                MessageBox.Show("Por favor ingrese el MONTO", "Campo requerido",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtMonto.Focus();
-                return;
-            }
 
-            if (string.IsNullOrWhiteSpace(estado))
-            {
-                MessageBox.Show("Por favor seleccione el ESTADO", "Campo requerido",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cboEstado.Focus();
-                return;
-            }
-
-            // 🔹 Validar que el monto sea un número válido
-            if (!decimal.TryParse(montoTexto, out decimal monto))
-            {
-                MessageBox.Show("El MONTO debe ser un número válido", "Error de validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtMonto.Focus();
-                return;
-            }
-
-            // 🔹 Insertar en la base de datos
-            using (SqlConnection conn = new SqlConnection(conexion))
-            {
-                try
-                {
-                    conn.Open();
-
-                    string query = "INSERT INTO PAGOS (ID_PAGO, ID_FACTURA, FECHA_PAGO, MONTO_PAGO, ESTADO_PAGO) " +
-                                   "VALUES (@idpago, @idfactura, @fecha, @monto, @estado)";
-
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@idpago", Convert.ToInt32(idPago));
-                    cmd.Parameters.AddWithValue("@idfactura", Convert.ToInt32(idFactura));
-                    cmd.Parameters.AddWithValue("@fecha", fecha);
-                    cmd.Parameters.AddWithValue("@monto", monto);
-                    cmd.Parameters.AddWithValue("@estado", estado);
-
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("✅ Pago guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    // Limpiar campos al guardar
-                    txtPago.Clear();
-                    txtFactura.Clear();
-                    txtMonto.Clear();
-                    dtpFecha.Value = DateTime.Now;
-                    cboEstado.SelectedIndex = 0;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("❌ Error al guardar: " + ex.Message);
-                }
-
-            }
-        }
 
         private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
     }
 
-}
+    }
+

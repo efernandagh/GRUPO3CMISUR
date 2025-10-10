@@ -30,44 +30,14 @@ namespace INICIO
         private void roles_Load(object sender, EventArgs e)
         {
             CargarRoles();
-            txtidrol.Enabled = false;
-            GenerarNuevoId();
+            
+            
         }
 
-        private void GenerarNuevoId()
-        {
-            try
-            {
-                using (SqlConnection con = new SqlConnection(conexion))
-                {
-                    con.Open();
-                    string consulta = "SELECT ISNULL(MAX(ID_ROL), 0) + 1 FROM ROL";
-                    SqlCommand cmd = new SqlCommand(consulta, con);
-                    object resultado = cmd.ExecuteScalar();
-                    txtidrol.Text = (resultado != null) ? resultado.ToString() : "1";
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("❌ Error al generar ID: " + ex.Message);
-                txtidrol.Text = "1";
-            }
-        }
+     
+        
 
-        private int ObtenerSiguienteIdrol()
-        {
-            int siguienteId = 1;
-
-            using (SqlConnection conexion = new SqlConnection(conexiontionString))
-            {
-                conexion.Open();
-                string consulta = "SELECT ISNULL(MAX(ID_ROL), 0) + 1 FROM ROL";
-                SqlCommand comando = new SqlCommand(consulta, conexion);
-                siguienteId = Convert.ToInt32(comando.ExecuteScalar());
-            }
-
-            return siguienteId;
-        }
+   
         public void CargarRoles()
         {
             using (SqlConnection con = new SqlConnection(conexion))
@@ -95,6 +65,7 @@ namespace INICIO
         }
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            string id = txtidrol.Text.Trim();
             string nombre = cmbnombrerol.Text.Trim();
             string descripcion = txtdescrip.Text.Trim();
 
@@ -109,8 +80,9 @@ namespace INICIO
                 using (SqlConnection con = new SqlConnection(conexion))
                 {
                     con.Open();
-                    string query = "INSERT INTO ROL (NOMBRE_ROL, DESCRIPCION) VALUES (@Nombre, @Descripcion)";
+                    string query = "INSERT INTO ROL (ID_ROL ,NOMBRE_ROL, DESCRIPCION) VALUES (@Nombre, @Descripcion)";
                     SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@idrol", id);
                     cmd.Parameters.AddWithValue("@Nombre", nombre);
                     cmd.Parameters.AddWithValue("@Descripcion", descripcion);
 
