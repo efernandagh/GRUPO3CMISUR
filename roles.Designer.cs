@@ -55,12 +55,13 @@
             GroupBox1.Controls.Add(Label1);
             GroupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             GroupBox1.ForeColor = Color.White;
-            GroupBox1.Location = new Point(420, 182);
+            GroupBox1.Location = new Point(419, 125);
             GroupBox1.Name = "GroupBox1";
             GroupBox1.Size = new Size(380, 331);
             GroupBox1.TabIndex = 12;
             GroupBox1.TabStop = false;
             GroupBox1.Text = "Roles";
+            GroupBox1.Enter += GroupBox1_Enter;
             // 
             // cmbnombrerol
             // 
@@ -173,7 +174,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(904, 556);
+            ClientSize = new Size(970, 556);
             Controls.Add(GroupBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "roles";

@@ -78,6 +78,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(421, 406);
             panel1.TabIndex = 7;
+            panel1.Paint += panel1_Paint;
             // 
             // cmbrol
             // 
